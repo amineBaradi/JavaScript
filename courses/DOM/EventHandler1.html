@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Events</title>
+</head>
+
+<body>
+
+    <button onclick="changeText()">Click me</button>
+
+    <p>Try to change me.</p>
+
+</body>
+
+<script>// تعديل نصِّ الفقرة عبر هذه الدالّة
+    const changeTexte = () => {
+        const p = document.querySelector('p');
+        p.textContent = "I changed because of an inline event handler.";
+    }
+
+
+
+    // الدالة المراد تنفيذها عند وقوع الحدث والتي تعدِّل محتوى الفقرة
+const changeText = () => {
+    const p = document.querySelector('p');
+    p.textContent = "I changed because of an event handler property.";
+}
+
+
+
+// let changeText=document.querySelector('p');
+// this.addEventListener('click'function(){
+//     this.textContent="amine is boss";
+// })
+
+
+
+
+
+
+// button إضافة معالج حدث كخاصية للعنصر 
+const button = document.querySelector('button');
+button.onclick = changeText;
+    </script>
+
+</html>

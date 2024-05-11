@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope-
+            Global And Local Scope
+        </title>
+</head>
+<body>
+    <script>
+/*
+Scope-
+            Global And Local Scope
+*/
+
+
+
+    var a = 1;      //Global Scope comme Public                                                                //Global Scope
+    let b = 2 ; 
+
+
+
+    function show(){
+    var a = 5;                                                                //loCal Scope
+    let b = 6 ; 
+    console.log(` function-from local ${a}`);  
+    console.log(`function-from local ${b}`);
+}
+//    console.log(`function-from global ${a}`);                                  //Global Scope
+//    console.log(`function-from global ${b}`);
+show();
+    </script>
+</body>
+</html>

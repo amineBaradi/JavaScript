@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number</title>
+</head>
+<body>
+<script>
+    /*
+    Double Precision   <==  search
+    sintatic Sugar "_"
+    e
+    **
+    With Decimal
+    Number + BigInt
+    Number MinValue 
+    Number MaxValue
+//=======================================================================    
+=========Number methode
+    two Dots To Call Methods
+    tostring()
+    tofixed
+    parseInt()
+    parsefloat()
+    isInteger()[ES6]
+    isNan()[ES6]
+    */ 
+Number("100");  //100  Number is function use constructor
+console.log(typeof Number);
+
+// console.log(1000000);       //1000000
+// console.log(1_000_000);    //1000000
+
+// console.log(1e6);          //1000000
+
+// console.log(10 ** 6);      //1000000
+console.log(10 * 10 * 10 * 10 * 10 * 10);
+// Math.pow(2, 53) - 1     // 9007199254740991
+
+
+// console.log(1000000.000);  //1000000
+
+//BigInt
+
+
+
+
+// console.log(Number.MAX_SAFE_INTEGER); // (وهو 253 -1).   9007199254740991//اعلى رقم امن ممكن تستعملوا
+console.log(Number.MAX_SAFE_INTEGER);
+Number.MIN_SAFE_INTEGER // -9007199254740991  تُمثِّل أصغر عدد صحيح «آمن» (safe integer)   
+// Math.pow(2, 53) - 1     // 9007199254740991
+console.log(Number.MIN_SAFE_INTEGER);
+console.log(Number.isSafeInteger(3));
+
+// console.log(Number.MAX_VALUE + 7346638682);//1.7976931348623157e+308
+// console.log(Number.MAX_VALUE);//1.7976931348623157e+308
+console.log(Number.MAX_VALUE + 12355357);
+console.log(Number.MIN_VALUE);
+// Number.MIN_VALUE تُمثِّل أصغر قيمة عددية قابلة للتمثيل في JavaScript.
+
+//=======================================================================    
+// console.log((100).toString());    // Renvoie une chaîne représentant l'objet Number spécifié.
+// console.log(100..toString()); // console.log(100.0.toString());
+
+// var count = 10;
+// console.log(count.toString());    // '10'
+// console.log((17).toString());     // '17'
+// console.log((17.2).toString());   // '17.2'
+
+// var x = 6;
+// console.log(x.toString(2));       // '110'
+// console.log((254).toString(16));  // 'fe'
+
+// console.log((-10).toString(2));   // '-1010'
+// console.log((-0xff).toString(2)); // '-11111111'
+
+
+
+// console.log((100.7647).toFixed(2)); // Renvoie une chaîne représentant le nombre avec un point décimal.
+// console.log((100.555555).toFixed(2));   // Renvoie une chaîne représentant le nombre avec un point décimal.
+// console.log((100.554555).toFixed(2)); // Renvoie une chaîne représentant le nombre avec un point décimal.
+// var numObj = 12345.6789;
+// numObj.toFixed();       // '12346': لاحظ عدم وجود جزء عشري
+// numObj.toFixed(1);      // '12345.7': لاحظ التقريب
+// numObj.toFixed(6);      // '12345.678900': لاحظ الأصفار الإضافة
+// (1.23e+20).toFixed(2);  // '123000000000000000000.00'
+// (1.23e-10).toFixed(2);  // '0.00'
+// 2.34.toFixed(1);        // '2.3'
+// 2.35.toFixed(1);        // '2.4'. لاحظ أنَّ التقريب إلى الرقم الأكبر
+// -2.34.toFixed(1);       // -2.3 (بسبب أولوية المعاملات)
+// (-2.34).toFixed(1);     // '-2.3' (...ما لم تستخدم الأقواس)
+
+
+console.log(parseInt("100"));   //100
+console.log(Number("100")); // 100
+console.log(Number(+"100")); // 100
+
+
+
+// console.log(Number("10 Amine"));    //NAN
+// console.log(+"10 Amine");          //NAN  Si l'argument passé au constructeur ne peut pas être converti en une valeur numérique, NaN est renvoyé
+// console.log(parseInt("10 Amine")); //  Interprète une chaîne qui lui est passée comme argument et renvoie un entier
+// console.log(parseInt("amine   10 Amine")); //NAN
+
+
+
+
+// console.log(parseInt("10.344 Amine"));
+// console.log(parseFloat("10.343 Amine"));    //// Interprète l'argument de chaîne qui lui est passé et renvoie un nombre décimal
+
+
+// console.log(Number.isInteger("100"));   
+// console.log(Number.isInteger(100.50));
+// console.log(Number.isInteger(100));   //// Détermine si la valeur qui lui est transmise est un entier ou non.
+// // integers
+// Number. isInteger(0); //true
+// Number. isInteger(1); //true
+// Number. isInteger(-100000); //true
+// Number. isInteger(99999999999999999999999); //true
+// // decimal counter:
+// Number. isInteger(0.1); // false
+// Number. isInteger(Math.PI); // false
+// // non-numeric values:
+// Number. isInteger(NaN); // false
+// Number. isInteger(Infinity); // false
+// Number. isInteger(-Infinity); // false
+// Number. isInteger('10'); // false
+// Number. isInteger(true); // false
+// Number. isInteger(false); // false
+// Number. isInteger([1]); // false
+
+console.log(Number.isFinite(value));     //// Détermine si la valeur qui lui est transmise est un nombre fini ou non.
+
+console.log(isNaN(100));
+console.log(isNaN("Amine"));
+console.log(isNaN("Amine" / 20 ));
+// Number.isNaN(NaN);        // true
+// Number.isNaN(Number.NaN); // true
+// Number.isNaN(0 / 0);      // true
+
+// // false:
+// Number.isNaN(true);
+// Number.isNaN(null);
+// Number.isNaN(37);
+// Number.isNaN('37');
+// Number.isNaN('37.37');
+// Number.isNaN('');
+// Number.isNaN(' ');
+
+// // As for the following values, it would have returned true if we used the public function isNaN():
+// Number. isNaN('NaN'); // false
+// Number. isNaN(undefined); // false
+// Number. isNaN({}); // false
+// Number. isNaN('blabla'); // false
+// console.log(Number.isNaN("Amine"+22));    //// Détermine si la valeur qui lui est transmise est NaN et est de type Number
+
+
+
+
+
+// The following code multiplies two numeric values, if the result is less than or equal to
+//MAX_VALUE calls func1, otherwise func2 is called:
+// if (num1 * num2 <= Number.MAX_VALUE) {
+// func1();
+// } else {
+// func2();
+// }
+
+
+console.log(Number.EPSILON(1.6));      //الخاصية EPSILON تملك القيمة التقريبية 2.2204460492503130808472633361816E-16 أو 2 -52.
+x = 0.2;
+y = 0.3;
+z = 0.1;
+console.log(equal = (Math.abs(x - y + z) < Number.EPSILON) );  
+</script> 
+</body>
+</html>

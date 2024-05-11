@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const pen = {//يتم انشاء كاءنات جافا سكريبت  بتعييين خاصيات الكاءن ضمن زوج اقواس معقوفة 
+            // يسمى الكاءن الحَرْفي object literal
+            type : "حبر جاف ",
+            color:"ازرق",
+            brand:"bic"
+        };
+        //   يمكن الوصول الى قيم الخاصيات بعد انشاء الكاءن بالتنويت النقطي dot notationمثل .myObject.muProperty 
+    alert(pen.brand);
+    pen.color= "تغيير لون القلم الى الاخضر ";//تعديل قيم الخاصيات في كاءن بعد انشاءه بالصيغة .myObject.myProperty = newValue
+    pen.price = "2.4";//الاضافة الديناميكية لخاصيات جديدة لكاءن انشاته قبلا
+
+    alert(`اكتب بقلم ${pen.type}لونه)
+    ${pen.color}و علامته التجارية 
+    ${pen.brand}`); //كيفية عرض خاصيات القلم السابق في تعليمة واحدة
+
+
+
+    const aurora= {
+    name :"اورورا",
+    health:150,
+    strength:25
+    };
+    alert(`يوجد لدى${aurora.name}نقاط قوة قدرها${aurora.health}وقوة تبلغ${aurora.strength}`);
+    // اصاب سهم اورورا وبالتالي تقل نقاط الحياة
+    aurora.health -= 20;
+    //تتجهز اورروا  بقلادة حياة
+    aurora.strength += 10 ;
+    alert(`يوجد لدى${aurora.name}نقاط قوة قدرها${aurora.health}وقوة تبلغ${aurora.strength}`);
+
+</script>
+</body>
+</html>

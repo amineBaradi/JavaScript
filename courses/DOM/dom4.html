@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    body {
+        max-width: 600px;
+        margin: 0 auto;
+        font-family: sans-serif;
+    }
+    .active {
+        border: 2px solid blue;
+    }
+
+    .warning {
+        border: 2px solid red;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    div {
+        border: 2px dashed lightgray;
+        padding: 15px;
+        margin: 5px;
+    }
+</style>
+
+<body>
+
+    <div>Div 1</div>
+    <div class="active">Div 2</div>
+<script>
+    const div =
+    document.querySelector('div');
+    //اسناد الصنف warning للعنصر div اللأول 
+    div.className = 'warning';//استخدام className للإسناد قيمة مباشرة الى الصنف
+
+
+// contains/items
+// عن طريق classList نقدر نضيف كلاس او نحدفه او توكل 
+// الثاني عن طريق اسم الصنف div اختيار العنصر
+const activeDiv = document.querySelector('.active');
+console.log(activeDiv.classList.lenght);
+
+// activeDiv.classList.add('hidden');                // hidden إضافة الصنف
+// activeDiv.classList.remove('hidden');             // hidden إزالة الصنف
+// activeDiv.classList.toggle('hidden');             //  (باختصار يعمل العكس)hidden إضافة أو إزالة الصنف
+activeDiv.classList.replace('active', 'warning'); // active 
+</script>
+</body>
+</html>

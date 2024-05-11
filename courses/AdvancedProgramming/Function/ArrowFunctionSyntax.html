@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Function Syntax</title>
+  </head>
+  <body>
+    <script>
+      /*
+        function
+        Arrow function
+        Regular Function VS Arrow Function [Param + No Param]
+        Miltiple Line
+        */
+
+      function print() {
+        return 10;
+      }
+      console.log(print());
+      //=======================================================================
+      let print = function () {
+        return 10;
+      };
+      console.log(print());
+      //=======================================================================
+      let print = () => {   
+        return 10;
+      };
+      console.log(print());
+      //=======================================================================
+      let print = () => 10;
+      console.log(print());
+      //=======================================================================
+      let print = () => {
+      let  a = 10 ;
+      return 10 ;
+      };
+      console.log(print());
+      //=======================================================================
+      let print = _ => 10; //Go language
+      console.log(print());
+      //=======================================================================
+      let print = function (num){
+      return num;
+      };
+      console.log(print(100));
+      //=======================================================================
+      let print =(num) => {
+      return num;
+      };
+      console.log(print(100));
+      //=======================================================================
+      let print =num => num
+      console.log(print(100));
+      //=======================================================================
+      let print =function (num , num1){
+      return num + num1 ;
+      };
+      console.log(print(100,200));
+      //=======================================================================
+      let print = (num,num1) => num + num1
+      console.log(print(100,100));
+  
+  </script>
+  </body>
+</html>

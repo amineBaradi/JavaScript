@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> les evenement Gestion des evenements avec DOM</title>
+</head>
+<body>
+
+
+    <h2>les evenement geres avec des attributs</h2>
+    <p>premier paraghraph</p>
+    <p >deusiem paraghraph</p> 
+    <p>troisiem paraghraph</p>
+    <p>qatriem paraghraph</p>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+
+
+<script>
+
+    // let t2=document.querySelector('h2');
+    // t2.addEventListener('click',function(){alert('bonjour')});
+
+
+    // t2.addEventListener('mouseover',function(){this.textContent=this.textContent.toUpperCase()});
+
+
+    // t2.addEventListener('click',function(){alert('au revoir')});
+
+
+    let p=document.getElementsByTagName('p')[0]
+    let btn=document.querySelector('button');
+    btn.addEventListener('click',function(){p.textContent=Date()})
+    
+
+    alert('test')
+    let btn1=document.querySelector('button');
+    btn.addEventListener('click',function(e) 
+    {alert(e.type);alert(e.target.textContent)});
+
+window.addEventListener('keypress',function(e){alert(e.key)})
+
+
+//faire un document html qui contien un div 
+// avec js et dom 2 faire 
+// ou chargement la div dois avoire 
+// un heith 200p^x et doit tetre centre avec un background-color yallew 
+// lorsque attech sur 
+// la color defnt doit tetre
+// soit ne 
+// soit une apech sur
+//soit une appech dans dour le message 
+// et la color jeunt et reprise 
+
+</script>
+
+</body>
+</html>

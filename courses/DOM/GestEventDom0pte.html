@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> les evenement Gestion des evenements avec DOM</title>
+</head>
+<body>
+
+
+    <h2> les evenement geres avec des attributs</h2>
+    <p>premier paraghraph</p>
+    <p >deusiem paraghraph</p> 
+    <p>troisiem paraghraph</p>
+    <p> qatriem paraghraph</p>
+    <button>Afficher date</button>
+
+
+
+<a href="http://google.ma" onclick="alert('action par defaout inhibèè');
+return false">google</a>
+<script>
+
+let t2=document.querySelector('h2');
+t2.onclick=function(){alert('bonjour')};
+
+// let btns=document.getElementsByTagName('button');
+// let b1=btn[0];
+// b1.oncllick=function(){let p1 = document.querySelector('p')};p1.textContent=Date();
+
+// b1.onmouseover=function()
+// {let para2=document.getElementsByTagName('p')[1];para2.style.color='red'}
+
+b1.onmouseover=function()
+{let para2=document.getElementsByTagName('p')[1];
+para2.removeAttribute('style')}
+btn=btns[1];
+b2.onclick = majStyleP4;
+
+
+let b3=btns[2];
+b3.onclick=function(){majStyle(t2);}
+
+</script>
+
+
+</body>
+</html>

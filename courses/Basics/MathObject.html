@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math</title>
+</head>
+<h2>JavaScript Math.PI</h2>
+
+<p>Math.PI returns the ratio of a circle's circumference to its diameter:</p>
+
+<p id="demo"></p>
+<body>
+    <script>
+        /*
+        ====MathObject
+        round()
+        ceil()
+        floor()
+        
+        min()
+        max()
+        pow()
+        random()
+        trunc()[ES6]
+        */
+        document.getElementById("demo").innerHTML = Math.PI;
+        document.getElementById("demo").innerHTML = 
+"<p><b>Math.E:</b> " + Math.E + "</p>" +
+"<p><b>Math.PI:</b> " + Math.PI + "</p>" +
+"<p><b>Math.SQRT2:</b> " + Math.SQRT2 + "</p>" +
+"<p><b>Math.SQRT1_2:</b> " + Math.SQRT1_2 + "</p>" +
+"<p><b>Math.LN2:</b> " + Math.LN2 + "</p>" +
+"<p><b>Math.LN10:</b> " + Math.LN10 + "</p>" +
+"<p><b>Math.LOG2E:</b> " + Math.LOG2E + "</p>" +
+"<p><b>Math.Log10E:</b> " + Math.LOG10E + "</p>";
+Math.E        // returns Euler's number
+Math.PI       // returns PI
+Math.SQRT2    // returns the square root of 2
+Math.SQRT1_2  // returns the square root of 1/2
+Math.LN2      // returns the natural logarithm of 2
+Math.LN10     // returns the natural logarithm of 10
+Math.LOG2E    // returns base 2 logarithm of E
+Math.LOG10E   // returns base 10 logarithm of E
+
+console.log(Math.round(99.2));
+console.log(Math.round(99.5));
+console.log(Math.round(99.9));
+
+
+
+console.log(Math.ceil(99.1));
+
+console.log(Math.floor(99.9));
+
+
+// console.log(Math.max(50,47,3,212,23,23,23));
+
+// console.log(Math.min(50,47,3,212,23,23,23));
+// console.log(Math.pow(2  , 5));
+//console.log(Math.random());
+//console.log(Math.trunc(53.765));      //تاتي لك بالعدد الصحيح فقط
+
+
+// Math.floor( 45.95); //  45
+// Math.floor( 45.05); //  45
+// Math.floor(  4   ); //   4
+// Math.floor(-45.05); // -46 
+// Math.floor(-45.95); // -46
+
+    </script>
+</body>
+</html>
+
+

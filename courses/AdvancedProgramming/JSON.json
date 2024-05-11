@@ -1,0 +1,12 @@
+
+{
+    "string" : "amine",
+    "number":17,
+    "boolean":"true",
+    "null":"null",
+    "object":{
+        "mar":"casa","Ksa":"mkah","maro":"mlilia",
+        "array":["r","t","r"]},
+    "array":[ "javascrpt", "html", "css",
+    {"mar":"casa"}]
+}

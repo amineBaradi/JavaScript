@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>   Element  /  Focus   /     Blur 
+        click
+    
+    
+    </title>
+</head>
+<body>
+    <div id="main">
+        <button> Hide My Div</button>
+           </div>
+   <form id="main" action="" method="post">
+    <input  id="inp" type="text">
+   </form>
+   <button>Remove Button</button> 
+ <button id="main">Eat Mounsterss</button>
+  <div id="mounster1">mounster1</div>
+  <div id="mounster2">mounster2</div>
+ <button id="power">Power</button>
+   <script>
+// let add=document.getElementById('main');
+// mypower=document.getElementById("power")
+// add.onclick=function(){
+//     'use strict';
+//     document.getElementById('mounster1').style.display='None';
+// };
+
+// mypower.onclick=function(){
+//     'use strict';
+     
+//     add.addEventListener('click',function(){
+//         document.getElementById('mounster2').style.display='None';  
+//     });
+// };
+    // window.onload=function(){
+    //     'use strict';
+    //     document.getElementById('inp').focus();
+    // };
+    // document.querySelector('button').onclick=function(){
+    //     'use strict';
+    //     this.blur();
+    // };
+
+    div=document.getElementById('main')
+    mydiv=div.firstElementChild;
+    console.log(mydiv);
+    mydiv.onclick=function(){
+        'use strict';
+        div.parentElement.style.display='None'
+    };
+    window.onload=function(){
+        'use strict';
+        setTimeout(function(){
+            mydiv.click();
+        },2000);
+         
+    };
+   </script>
+</body>
+</html>

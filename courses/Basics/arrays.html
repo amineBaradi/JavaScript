@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arrays</title>
+</head>
+
+<body>
+<!-- 
+Arrays
+        Create Arrays[two methods]new array()+[]
+        Access Arrays Elements
+        Nested Arrays
+        change Arrays Elements
+        check for Array.isArray(arr);
+
+-->
+<!-- 
+        length
+        Arrays Methods[Adding And Removing]
+        -unshift("","")Add Element to the first
+        -push("","")Add Element to the End
+        -shift()Remove last Element From Array
+        -pop()Remove Last Element From Array
+-->
+<!-- 
+        Arrays Methods[Search]
+        indexOf(SearchElement,FromIndex[opt])
+        lastindexOf(searchElement,fromIndex[opt])
+        includes[ValueToFind,FromIndex[opt][ES7]]
+-->
+<!-- 
+        Arrays Methods[sort]
+        sort(function[Opt])
+        reverse-->
+        <!-- 
+        Arrays Methods [Slicing]
+        -slice(Start [Opt] , End [Opt] Not Including End )
+        ---slice() => All Array
+        ---If Start Is Undefined => 0
+        ---Negative Count From End
+        ---If End Is Undefined || > Indexes => Slice To The End Array.length
+        ---Return New Array
+        -splice(Start [Mand],DeleteCount [Opt] [0 No Remove] , The Items To Add [Opt])
+        ---If Negative => Start From The End         
+
+
+        Arrays Methods [Joining]
+        -contact (array,array) => Return A New Array
+        -join(Separator)
+-->
+<main id="content"></main>
+
+
+<script>
+        // إنشاء مصفوفة
+        var fruits = ['Apple', 'Banana'];
+        console.log(fruits.length); // 2
+//===========================================================================================
+        // الوصول إلى عنصر من عناصر المصفوفة
+        var first = fruits[0];
+        // Apple
+        var last = fruits[fruits.length - 1];
+        // Banana
+//===========================================================================================
+        // المرور على عناصر المصفوفة بحلقة تكرار
+        fruits.forEach(function (item, index, array) {
+            console.log(item, index);
+        });
+        // Apple 0
+        // Banana 1
+//===========================================================================================
+        // إضافة عنصر في نهاية المصفوفة
+        var newLength = fruits.push('Orange');
+        // ["Apple", "Banana", "Orange"]
+//===========================================================================================
+        // إزالة عنصر من نهاية المصفوفة
+        var last = fruits.pop(); // إزالة Orange (من النهاية)
+        // ["Apple", "Banana"];
+//===========================================================================================
+        // إزالة عنصر من بداية المصفوفة
+        var first = fruits.shift(); // إزالة Apple (من البداية)
+        // ["Banana"];
+//===========================================================================================
+        // إضافة عنصر في بداية المصفوفة
+        var newLength = fruits.unshift('Strawberry');
+        // ["Strawberry", "Banana"];
+//===========================================================================================
+        // العثور على فهرس أحد عناصر المصفوفة
+        fruits.push('Mango');
+        // ["Strawberry", "Banana", "Mango"]
+        var pos = fruits.indexOf('Banana');
+        // 1
+//===========================================================================================
+        // حذف عنصر في فهرس معيّن
+        var removedItem = fruits.splice(pos, 1);
+        // ["Strawberry", "Mango"]
+//===========================================================================================
+    
+        // إزالة عناصر بعدد معيّن بدءًا من فهرسٍ مُحدَّد
+        var vegetables = ['Cabbage', 'Turnip', 'Radish', 'Carrot'];
+        console.log(vegetables);
+        // ["Cabbage", "Turnip", "Radish", "Carrot"]
+        var pos = 1, n = 2;
+        var removedItems = vegetables.splice(pos, n);
+        console.log(vegetables);
+        // ["Cabbage", "Carrot"] (ستُغيّر المصفوفة الأصلية)
+        console.log(removedItems);
+        // ["Turnip", "Radish"]
+//===========================================================================================
+        // نسخ مصفوفة
+        var shallowCopy = fruits.slice();
+        // ["Strawberry", "Mango"]
+//===========================================================================================
+        
+
+        // let Myfriends=["amine","hamid","amir",["aymen" ,"mohamed"]] ;
+        // console.log(`hello ${Myfriends[0]}`) ;
+        // console.log(`hello ${Myfriends[2]}`) ;
+        // console.log(`hello ${Myfriends[2][1]}`) ;
+        // console.log(`hello ${Myfriends[3]}`) ;
+        // console.log(`hello ${Myfriends[3][1]}`) ;
+        // console.log(`hello ${Myfriends[3][1][3]}`) ;
+    
+        
+        
+        // console.log(Myfriends);
+        // Myfriends[1] = "Hamid" ;
+        // Myfriends[3] = "Mojahid" ;
+        // Myfriends[3] =  ["Sameh","Mostafa","Mokhtar"] ;
+        // console.log(Myfriends);
+    
+        // console.log(`hello evreone ${Myfriends[4][1]}`)
+        
+        // for(let i=0;i<Myfriends.length;i++){
+        //     alert(`hello evreone ${Myfriends[4][1][4]}`)
+        //     alert(Myfriends[3]);
+
+        // } 
+        
+        
+        // console.log(typeof Myfriends);  //Object
+        // Myfriends[1]="abdolhamid";
+        // console.log(Myfriends);
+        // let str = "Amine";
+        // console.log(Array.isArray(str));
+        // console.log(Array.isArray(Myfriends));
+        // console.log(Myfriends);
+        
+        // // Index Start From 0 [0,1,2,3]
+        // console.log(Myfriends.length);
+
+        // console.log(Myfriends.length);
+        // Myfriends[6]="lion";
+        // console.log(Myfriends);
+        // console.log(Myfriends.length);
+
+        // Myfriends[4]="Ala";
+        // Myfriends[Myfriends.length]="Ala";
+
+        // Myfriends[Myfriends.length] ="lion";
+        // Myfriends[Myfriends.length-1] ="Jamil";
+        // Myfriends.length =3;
+//===========================================================================================
+        //  friends.unshift("linda","lina") // يضيف عناصر في اول المصفوفة 
+        //  let li= friends.shift("linda","lina")//يحدف العنصر الاول في المصفوفة 
+        //  console.log(li);
+        //  friends.push("ourora","rosalinda") //  يضيف عناصر في نهاية المصفوفة 
+        //  friends.pop("ourora","rosalinda")//يحدف العنصر الاخير في الصفوفة
+        // console.log(friends);
+//===========================================================================================
+        // console.log(friends.indexOf("amine",3));
+        // // console.log(friends.indexOf("amine"));
+        // console.log(friends.lastIndexOf("amine"));
+
+        // if(myfriends.indexOf("Ahmed") === -1){
+        //     console.log("Not Found");
+        // }
+        console.log(myfriends.indexOf("Amir"));
+        console.log(myfriends.lastIndexOf("Hamid"));
+
+//===========================================================================================
+        // console.log(friends.includes("amine,3"));
+//===========================================================================================
+        let Myfriends=["amine","hamid","hamine","amir","45",45656,2000,8999,1,0,-65,-0]
+        console.log(Myfriends);
+        console.log(Myfriends.sort());
+        console.log(Myfriends.reverse());
+        console.log(Myfriends.sort().reverse());
+//===========================================================================================
+        // let friends=["amine","hamid","hamine","amir","amine","baradi"]
+        // console.log(friends);
+        // // console.log(friends.slice(4));
+        // console.log(friends.slice(1,3));
+        // console.log(friends.slice(-3));
+        // console.log(friends.slice(1,-3));
+        // console.log(friends);
+//===========================================================================================
+        //  friends.splice(0,0,"sami","samaira");
+        //  console.log(friends);   
+        //  friends.splice(0,1,"sami","samaira");  
+        //  console.log(friends);
+        //  friends.splice(1,2,"sami","samaira");  
+        //  console.log(friends);        
+        //  friends.splice('1','5',"sami","samaira"); 
+        //  console.log(friends);
+//===========================================================================================
+        let friends = ["amine", "amir", "hamid"]
+        let newfriends = ["baradi", "radi"]
+        let scfriends = ["baradi1", "radi1"]
+        
+        let allFriends = friends.concat(newfriends);
+        
+        let myfriends = friends.concat(newfriends, scfriends, "lion", ["sif", "linda"]);
+
+        console.log(myfriends);
+        console.log(myfriends.join(""));
+        console.log(myfriends.join("  "));
+        //---
+        console.log(myfriends.join(" et ").toLocaleUpperCase());
+        console.log(myfriends.join(" et ").toUpperCase());
+
+        var posts =
+        [
+                ["img/chat.jpg", " ", "cours html in arabic"],
+                ["img/download.jpg", " ", "cours css in arabic"],
+                ["img/egale.jpg", " ", "course javascript in arabic"],
+                ["img/feu.jpg", " ", "course python in arabic"],
+                ["img/lion.jpg", " ", "cours php in arabic"],
+        ]
+        document.write(posts)
+
+        var content = document.getElementById("content")
+        posts.forEach(post => {
+        content.innerHTML = content.innerHTML +
+                `<article
+<h2>${post[2]}</h2>
+><a href="${post[1]}"> <img src="${posts[0]}" width:"100%" /> </a>
+
+</aricle>`
+
+        }) 
+</script>
+</body>
+
+</html>

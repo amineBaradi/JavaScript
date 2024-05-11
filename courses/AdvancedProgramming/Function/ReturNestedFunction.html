@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Nested Function</title>
+</head>
+<body>
+   <script>
+/*
+Function
+         function Inside function
+         Return function
+*/
+
+
+
+//Example 1
+
+function person(name,prenom){
+    let message =`Hello` ;
+    
+    //Nested Function
+    function  person1(){
+       message =` ${message}${name} ${prenom}`;
+    }
+    person1();
+    return message;  
+}
+console.log(person("amine","baradi")); 
+// =================================================================================================
+//Example 2
+
+function person(name,prenom){
+    let message = 'hello';
+    //Nested Function
+    function  person1(){
+       return` ${message}${name} ${prenom}`;
+    }
+    
+    return person1();  
+}
+console.log(person("amine","baradi")); 
+
+// =================================================================================================
+//Example 3
+function sayMessage(fName,lName){
+   let message = 'hello';
+   
+   //Nested Function
+   function  concatMsg(){
+   
+      function getFullName(){
+      return `${fName} ${lName}`
+      }
+   
+      return` ${message}${getFullName()}`;
+   }
+   return concatMsg();  
+}
+console.log(sayMessage("amine","baradi")); 
+
+
+//fait un pleusieur function nested max 4
+   </script> 
+</body>
+</html>

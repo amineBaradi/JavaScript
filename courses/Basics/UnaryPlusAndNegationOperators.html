@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unary Plus And Negation Operators</title>
+</head>
+<body>
+    <script>
+/*
+        +Unary plus [ Return Number If Its Not Number]
+        -Unary Negation [ Return Number If Its Not Number + Negates It ]
+        Tests
+        -Normal Number
+        -String Number
+        -String Negative Number  
+        -String text
+        -Float
+        -Hexadecimal Numeral System => 0*FF
+        -null
+        -false
+        -true
+*/
+console.log(+100);      // 100
+console.log(+"100");    // 100
+console.log(+"-100");   // -100
+console.log(+"amine");  // Not A number 
+console.log(+"15.3");   // 15.3
+console.log(+0xff);     // 255
+console.log(+null);     // 0
+console.log(+true);     // 0
+console.log(+false);    // 1
+
+console.log('#########' );
+
+console.log(-100); // -100
+console.log(-"100"); //-100
+console.log(-"-100"); //100
+console.log(-"amine");//NAN
+console.log(-"15.3"); // -15.3
+console.log(-0xff); // -255
+console.log(-null); // -0
+console.log(-true); // -0
+console.log(-false); // -1
+
+
+console.log(Number("100"));   //100
+
+
+
+
+    </script>
+</body>
+</html>

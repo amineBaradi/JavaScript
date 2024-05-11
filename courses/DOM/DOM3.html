@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img src="amine.jpg"width='50px' height="50px" alt="rien">
+    <script>
+        let demoIMG =document.querySelector('img');
+        
+        // img.hasAttribute('src');//يعيد القيمة(هل العنصر يحتوي على اتربيوت معين ام لا) true او false ان كان العنصر يملك خاصية
+        if(demoIMG.hasAttribute('alt')){
+        console.log('yes');
+        }else{
+            console.log('Non');  
+        }
+            img.getAttribute('src');//يعيد قية الخاصية المحددة او null
+        img.removeAttribute('src');//يزيل خاصية محددة من عنصر 
+        img.setAttribute('src','img/le lion.jpg');//يضيف او يحدث قيمة لخاصية محددة
+        img.src = 'img/chat.jpg';
+        img.setAttribute('title','le roi de zoux');
+    </script>
+</body>
+</html>

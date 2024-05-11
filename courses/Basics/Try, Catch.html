@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Try, Catch And Finally With Fetch</title>
+</head>
+<body>
+    <script>
+
+// ====================================================================================================================
+/*
+Async & Await With Try , Catch , Finally
+*/ 
+// const myPromise = new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//     resolve("I'am The Good Promise")
+//     reject(Error("I'am The Bad Promise"))
+//     },3000);
+// });
+// async function readData(){
+//     console.log("Before Promise");
+//     // myPromise.then((resolvedValue)=>console.log(resolvedValue));
+//     // console.log(await myPromise.catch((err)=>err));
+    
+//     try{
+//         console.log(await myPromise);
+//     }catch(Exception){
+//     console.log(Exception);
+//     }finally{
+//     console.log("After Promise");
+
+//     }
+// }
+// readData();
+//======================================================================================================================
+
+//         try {
+// alert('Start of try runs');  // (1) <-- بداية التشغيلات
+// // ...ما من أخطاء هنا
+// alert('End of try runs');   // (2) <-- نهاية التشغيلات
+// } catch(err) {
+//  // (3)  تُهمل catch إذ ليست هناك أخطاء
+// alert('Catch is ignored, because there are no errors');
+// }
+//======================================================================================================================
+// try {
+//    throw 'myException'; // توليد استثناء
+// }
+// catch (e) {
+//    // التعابير البرمجية اللازمة لمعالجة الاستثناء
+//    logMyErrors(e); // تسجيل معلومات كائن الاستثناء
+// }
+//======================================================================================================================
+
+
+
+// try {
+//    myroutine(); // قد تؤدي هذه الدالة إلى رمي استثناء من أي نوع
+// } catch (e) {
+//     if (e instanceof TypeError) {
+//         // ...
+//     } else if (e instanceof RangeError) {
+//         // ...
+//     } else if (e instanceof EvalError) {
+//         // ...
+//     } else {
+//        // ...
+//     logMyErrors(e);
+// }
+// }
+//======================================================================================================================
+// openMyFile();
+// try {
+//    // حجز المورد
+// writeMyFile(theData);
+// }
+// finally {
+//    closeMyFile(); // إغلاق المورد على كل حال
+// }
+    </script>
+</body>
+</html>

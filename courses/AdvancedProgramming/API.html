@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API(ApplicationProgrammingInterface)</title>
+</head>
+
+<body>
+
+<script>
+/*
+JSON
+-API Overview     
+-Tools To Test API
+-Preview Github API
+Public API vs Private API
+
+JSON.parse => Convert Text Data To JS Object
+JSON.stringify => Convert JS Object To JSON
+*/
+
+const myJsonObjectFromServer = '{"Username":"Amine","Age":39}';
+console.log(typeof myJsonObjectFromServer);
+console.log(myJsonObjectFromServer);
+// Converts a JSObject Notation string into an object.
+const myJsObject = JSON.parse(myJsonObjectFromServer)
+console.log(typeof myJsObject);
+console.log(myJsObject);
+
+myJsObject["Username"] = "Amine";
+myJsObject["Age"] = 4;
+
+//Converts a JS value to a JSObject Notation string
+const myJsonObjectToServer = JSON.stringify(myJsObject);
+console.log(typeof myJsonObjectFromServer);
+console.log(myJsonObjectFromServer);
+
+
+
+JSON.parse('{}');              // {}
+JSON.parse('true');            // true
+JSON.parse('"foo"');           // "foo"
+JSON.parse('[1, 5, "false"]'); // [1, 5, "false"]
+JSON.parse('null');            // null
+
+
+
+// JSON.parse('{"p": 5}', (key, value) =>
+//   typeof value === 'number'
+//     ? value * 2 // value * 2 للأرقام
+//     : value     // إعادة القيمة كما هي لبقية الأنواع
+// );
+// { p: 10 }
+
+
+
+// JSON.parse('{"1": 1, "2": 2, "3": {"4": 4, "5": {"6": 6}}}', (key, value) => {
+//   console.log(key); // عرض اسم الخاصية
+//   return value;     // إعادة القيمة دون تعديل
+// });
+// 1
+// 2
+// 4
+// 6
+// 5
+// 3 
+// ""
+
+
+// JSON.parse('[1, 2, 3, 4, ]');
+// JSON.parse('{"foo" : 1, }');                          //لا يجوز وضع فاصلة بعد آخر خاصية أو عنصر من عناصر المصفوفة، وفعل ذلك سيؤدي إلى رمي الاستثناء
+
+
+
+// JSON.stringify({});                  // '{}'
+// JSON.stringify(true);                // 'true'
+// JSON.stringify('foo');               // '"foo"'
+// JSON.stringify([1, 'false', false]); // '[1,"false",false]'
+// JSON.stringify({ x: 5 });            // '{"x":5}'
+// JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)) 
+// // '"2006-01-02T15:04:05.000Z"'
+// JSON.stringify({ x: 5, y: 6 });
+// // '{"x":5,"y":6}'
+// JSON.stringify([new Number(3), new String('false'), new Boolean(false)]);
+// // '[3,"false",false]'
+// JSON.stringify({ x: [10, undefined, function(){}, Symbol('')] }); 
+// // '{"x":[10,null,null,null]}' 
+// // Symbols:
+// JSON.stringify({ x: undefined, y: Object, z: Symbol('') });
+// // '{}'
+// JSON.stringify({ [Symbol('foo')]: 'foo' });
+// // '{}'
+// JSON.stringify({ [Symbol.for('foo')]: 'foo' }, [Symbol.for('foo')]);
+// // '{}'
+// JSON.stringify({ [Symbol.for('foo')]: 'foo' }, function(k, v) {
+//   if (typeof k === 'symbol') {
+//     return 'a symbol';
+//   }
+// });
+// // '{}'
+// // Non-enumerable properties:
+// JSON.stringify( Object.create(null, { x: { value: 'x', enumerable: false }, y: { value: 'y', enumerable: true } }) );
+// // '{"y":"y"}'
+// ============================================================================================================
+/*
+To Understand Ajax , Fetch , Promises
+Asynchronous vs Synchronous Programming
+-Meaning
+
+
+Synchronous
+-Operation Runs in Sequence
+-Each Operation Must Wait For The Previous One To Complete
+-Story From Real Life
+
+
+Asynchronous
+-Operation Runs Parallel
+-This Means That An Operation Can Occur While Another One Is Still Being Processed
+-Story From Real Life
+
+-Facebook As Example
+-Simulation
+
+
+Search
+-Javascript Is A Single-Threaded
+-Multi Threaded Languages
+*/ 
+
+// Synchronous
+// console.log("1");
+// console.log("2");
+// window.alert("operation");
+// console.log("3");
+// ===========================
+// Asynchronous
+// console.log("1");
+// console.log("2");
+// setTimeout(()=>console.log("operation"),4000);
+// console.log("3");
+// ============================================================================================================
+/*
+To Understand Ajax , Fetch , Promises
+
+Call Stack || Stack Trace
+--JavaScript Engine Uses A Call Stack To Manage Execution Contexts
+--Mechanism To Make The Interpreter Track Your Calls
+--When Function Called It Added To The Stack
+--When Function Executed It Removed From The Stack
+--After Function Is Finished Executing The Interpreter Continue From The Last Point
+--Work Using LIFO Principle => Last In First Out
+--Code Execution Is Synchronous.
+--Call Stack Detect Web API Methods And Leave It To The Browser To Handle It
+
+Web API
+--Methods Available From The Environment => Browser
+*/ 
+setTimeout(()=>{
+console.log("Web Api" );
+},0);
+
+function one(){
+    console.log("one");
+}
+function thwo(){
+    one();
+    console.log("thwo");
+}
+function three(){
+    thwo();
+    console.log("three");
+}
+three();
+
+console.log("#####");
+console.log("one");
+console.log("thwo");
+console.log("three");
+
+
+// ============================================================================================================
+/*
+To Understand Ajax , Fetch , Promises
+
+Event Loop + Callback Queue
+
+Story
+-Javascript Is A Single Threaded Language "All Operation Executed in Single Thread"
+-Call Stack Track All Calls
+-Every Function Is Done Its Poped Out
+-When You Call Asynchronous Function It Sent To Browser API
+-Asynchronous Function Like Settimeout Start Its Own Thread
+-Browser API Act As A Second Thread
+-API Finish Waiting And Send Back The Function For Processing
+-Browser API Add The Callback To Callback Queue
+-Event Loop Wait For Call Stack To Be Empty
+-Event Loop Get Callback From Callback Queue And Add It To Call Stack
+-Callback Queue Follow FIFO "first In First Out" Rule
+*/ 
+175
+
+// ============================================================================================================
+/*
+Fetch API
+- Return A Representation Of the Entire HTTP Response
+*/ 
+async function breaking_bad() {
+const response = await fetch("https://www.breakingbadapi.com/api/");
+const data= await response.json()
+
+console.log(data);
+}
+breaking_bad()
+// =======
+                fetch("https://www.breakingbadapi.com/api/").then((result)=>{
+                console.log(result);
+                let myData = result.json();
+                console.log(myData);
+                return myData;
+                }).then((myData)=>{
+                myData.length =10;
+                return myData ;
+                }).then((myData)=>{
+                    console.log(myData[0].name);
+                });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Data Type</title>
+</head>
+<body>
+    <script>
+/*
+-Set Data Type
+Syntax : new Set (Iterable)
+--  Object To Store Unique Values
+--  Cannot Access Element By Index
+
+    Properties:
+    -size
+
+    Methodes:
+    -add
+    -delete
+    -clear
+    -has
+*/
+
+let myData = [1,1,1,2,3,"A"];
+console.log(myData);
+console.log(myData[0]);
+//=====Set
+let myUniqueData = new Set([1,1,1,2,3])
+// let myUniqueData = new Set(myData)
+//console.log(myUniqueData[0]); Undefined
+// console.log(myUniqueData.size);
+console.log(myUniqueData);
+
+// let myUniqueData = new Set().add(1).add(1).add(1).add(2).add(3);
+
+// let myUniqueData = new Set();
+// myUniqueData.add(1).add(1).add(1);
+// myUniqueData.add(2).add(3).add("A");
+//=====
+// myUniqueData.delete(2);
+// console.log(myUniqueData.delete(2));  //true
+// console.log(myUniqueData.delete(20)); //false
+// console.log(myUniqueData);
+//console.log(myUniqueData[0]); Undefined
+//=====
+
+//myUniqueData.clear();
+// console.log(myUniqueData);
+// console.log(myUniqueData.size);
+//console.log(myUniqueData[0]); Undefined
+
+// console.log(myUniqueData.has(`Is Set Has =>${myUniqueData.has("A".toLocaleUpperCase)}`));   //true
+//=============================================================================================================================================
+/*
+-Set vs Weakset
+"
+The WeakSet is weak,
+meaning references to objects in a WeakSet are held weakly.
+If no other references to an object stored in the WeakSet exist,
+those objects can be garbage collected.
+"
+--
+Set    => Can Store Any Data Values
+WeakSet => Collection Of Objects Only
+--
+Set => Have Size Property
+WeakSet => Does Not Have Size Property
+--
+Set => Have Keys, Values,Entries                       Keys is alias of Values
+WeakSet => Does Not Have clear , keys , Values And Entries
+--
+Set => Can Use forEach
+WeakSet => Cannot Use forEach
+
+Usage:Store objects and removes them once they become inaccessible
+
+Search
+-Iterable  - iteration - iterator ...
+Weakset Use Cases
+
+*/
+
+//Type Of Data
+let mySet = new Set([1,1,1,2,3,"A","A"]);
+console.log(mySet);
+
+
+//Size
+console.log(`Size Of Elements Inside Set Is :${mySet.size}`);
+
+//Values + Keys Alias
+
+// let iterator = mySet.keys();   //Or mySet.Values Because Keys is alias of values 
+// console.log(iterator.next().value);
+// console.log(iterator.next().value);
+// console.log(iterator.next().value);
+// console.log(iterator.next().value);
+// console.log(iterator.next());
+// console.log(iterator);
+
+//foreach
+// mySet.forEach((el)=> console.log(el));
+
+
+// console.log("#".repeat(20));
+// -----------------------------------------WeakSet
+//Type Of Data
+// let myws = new WeakSet([{A:1,B:2,C:3}]);
+// console.log(myws);
+
+
+
+
+//=============================================================================================================================================
+/*
+Map Data Type
+Syntax : new Map(iterable With Key/Value)
+---Map vs Object
+--
+------Map => Does Not Contain Key By Default
+------Object => Has Default Keys
+--
+------Map => Key Can Be Anything [Function , Object , Any Primitive Data Types]
+------Object => String Or Symbol
+--
+------Map => Ordered By Insertion
+------Object =>Not 100% Till Now
+--
+------Map => Get Items By Size
+------Object => Need To Do Manually
+--
+------Map => Can Be Directly Iterated
+------Object => Not Directly And Need To Use Object.keys() And So On
+--
+------Map => Better Performance When Add Or Remove Data
+------Object => Low Performance When Comparing To Map
+*/
+// let myObject = {};
+// let myEmptyObject = Object.create(null);
+// console.log(myEmptyObject);
+// console.log(myObject);
+
+
+//===
+// let myNewObject = {
+//     10:"Number",
+//     10:"String",
+//     "10":"Array",
+// };
+// console.log(myNewObject[10]);
+
+//======
+// let myMap = new Map();
+// console.log(myMap);
+// ===
+// let myNewMap = new Map();
+// myNewMap.set(10,"Number");
+// myNewMap.set("10","Number");
+
+// myNewMap.set(true,"Boolean");
+// myNewMap.set({a:1,b:2},"Object");
+// myNewMap.set(function doSomething() {},"Function");
+
+
+// console.log(myNewMap.get(10));
+// console.log(myNewMap.get("10"));
+// console.log("######");
+// console.log(myNewObject);
+// console.log(myNewMap);
+//=========================================================================================================
+/*
+Map Data Type
+Methods
+------set
+------get
+------delete
+------clear
+------has
+
+Properties
+------size
+*/
+// let myMap1 = new Map([
+//     [10,"Number"],
+//     ["Name","String"],
+//     [false,"Boolean"],
+// ]);
+// myMap1.set(10,"Number");
+// myMap1.set("Name","String");
+
+// console.log(myMap1);
+
+// console.log(myMap1.get(10));
+// console.log(myMap1.get("Name"));
+// console.log(myMap1.get(false));
+
+// console.log(myMap1.size);
+// console.log(myMap1.delete("Name"));
+// console.log(myMap1.size);
+
+// console.log(myMap1.has(false));
+
+// myMap1.clear();
+// console.log(myMap1.size);
+// ======================================================================================================
+/*
+-Map vs WeakMap
+"
+WeakMap Allows Garbage Collector To Do Its Task But Not Map
+"
+--
+Map     => Key Can Be Anything
+WeakMap => Key Can Be Object Only
+--
+*/
+
+
+// let mapUser = {theName : "Elzero"};
+
+// let myMap2 =new Map();
+// myMap2.set(mapUser,"Object Value");
+
+// mapUser = null ; //Override The Reference
+// console.log(myMap2);
+
+// // ====
+console.log("#".repeat(20));
+
+// let wMapUser = {theName : "Elzero"};
+// let myWeakMap = new WeakMap();
+// // /myWeakMap.set("Name","Value");
+// myWeakMap.set( wMapUser,"Value");
+//  wMapUser = null ; //Override The Reference
+// console.log(myWeakMap);
+// ======================================================================================================
+/*
+Array Methods
+-Array.from(Iterable,MapFunc;this)
+---Variable
+---String Number
+---Set
+---Using The Map Function
+---Arrow Function
+---Shorten The Method + Use arguments
+*/
+
+// console.log(Array.from("Amine"));
+// console.log(Array.from(12356));
+// console.log(Array.from("12356"));
+// console.log(
+//     Array.from("12356",function (n){
+//     return +n + +n;
+// }));
+// console.log(Array.from("12345",(n)=> +n + +n));
+
+
+// let myArray = [1,1,1,2,3,4];
+// let mySet1 = new Set(myArray);
+// console.log(mySet1);
+// console.log(Array.from(mySet1));
+
+
+// console.log([new Set(myArray)]);
+// console.log([...new Set(myArray)]); 
+
+
+
+// function af(){
+//     arguments;
+// }
+// console.log(af("Amine","Hamid","Amir",1,3));
+
+
+// function af(){
+//     return Array.from(arguments);
+// }
+// console.log(af("Amine","Hamid","Amir",1,3));
+// ======================================================================================================
+/*
+Array Methods
+- Array.copyWithin(Target ,Start => Optional ,End => Optional)
+"Copy Part Of An Array To Another Location in The Same Array"
+--Any Negative Value Will Count From The End
+--Target
+---Index To Copy Part One
+---If At Or Greater Than Array Length Nothing Will Be Copied
+--Start 
+---Index To Start Copying From
+---If Ommited = Start From Index 0
+--End
+----Index To End Copying From
+----Not Including End
+----If Ommited = Reach The End
+*/
+// let myArray1 = [10,20,30,40,50,"A","B"];
+// myArray1.copyWithin(4,6);
+// myArray1.copyWithin(4,-1);
+// myArray1.copyWithin(1,-1,-2);
+// myArray1.copyWithin(1,-2,-1);
+
+// console.log(myArray1);
+
+// ======================================================================================================
+/*
+Array Methods 
+-Array.some(CallbackFunc(Element,Index,Array),This Argument)
+--CallbackFunc => Function To Run On EVery Element On the Given Array
+--------Element => The Current Element To Process
+--------Index => Index Of Current Element
+--------Array => The Current Array Working With
+---This Argument => Value To Use As This When Executing CallbackFunc
+--
+Using
+-Check if Element Exists In Array
+-Check if Number In Range
+*/ 
+// let nums = [1,2,3,4,5,6,7,8,9,10];
+// let check = nums.some(function(e){
+// console.log(test);
+//     return e > 5
+// });
+// console.log(check);
+
+// let myNumber = 10 ;
+// let check = nums.some(function(e){
+//     return e > this ;
+// },myNumber);
+// console.log(check);
+
+// let check = nums.some((e)=> e > 5);
+// console.log(check);
+
+// function checkValues(arr,val){
+//     return arr.some(function (e){
+//         return e == val
+//     });
+// }
+// console.log(checkValues(nums,20));
+// console.log(checkValues(nums,5));
+
+
+// let range = {
+//     min : 10 ,
+//     max:20,
+// };
+// let checkNumberRange = nums.some(function (){
+//     console.log(this.min);
+//     console.log(this.max);
+//     return e >= this.min && e <= this.max; 
+// },range);
+
+// console.log(checkNumberRange);
+
+// ======================================================================================================
+/*
+Array Methods
+-Array.every(CallbackFunc(Element,Index,Array),This Argument)
+---CallbackFunc => Function To Run On Every Element On The Given Array
+------Element => The Current Element To Process
+-----Index => Index Of Current Element
+------Array => The Current Array Working With
+---This Argument => Value To Use As This When Executing CallbackFunc
+--
+*/ 
+// const locations = {
+// 20:"Place 1",
+// 30:"Place 2",
+// 10:"Place 3",
+// 40:"Place 4",
+// };
+// let mainLocation = 15;
+
+// let locationsArray = Object.keys(location);
+// console.log(locationsArray);
+// let locationArrayNumbers = locationsArray.map((n) => +n);
+// console.log(locationArrayNumbers); 
+
+// let checkEvery = locationArrayNumbers.every(function(e){
+// return e>this;
+// },mainLocation)
+// console.log(checkEvery);
+// ======================================================================================================
+/*
+Spread Operator =>...Iterable
+"Allow Iterable To Expand In Place"
+*/ 
+
+
+// Spread With String => Expand String
+// console.log("Amine");
+// console.log(..."Amine");
+// console.log([..."Amine"]);
+// // Concatenate 
+// let myArray2 = [1,2,3];
+// let myArray3 = [1,2,3];
+// let allArrays = [...myArray2,...myArray3]
+// // Copy Array
+// let copiedArray = [...myArray2];
+// console.log(copiedArray);
+// // Push Inside Array
+// let allFriends = ["Amine","Amir","Hamid"];
+// let thisYearFriends = ["Sameh","Mahmoud"];
+// allFriends.push(...thisYearFriends);
+// console.log(allFriends);
+// // Use With Match Object
+// let myNums = [10,20,-100,100,1000,500];
+// console.log(Math.max(...myNums));
+// // Spread With Object => Merge Objects
+// let objOne = {
+//     a : 1,
+//     b : 2,
+// };
+// let objTwo = {
+//     a : 3,
+//     b : 4,
+// };
+
+// console.log({...objOne,...objTwo,e:4});
+    </script>
+
+</body>
+</html>

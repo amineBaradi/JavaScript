@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Order Functions - Reduce</title>
+</head>
+<body>
+    <script>
+/*
+-Reduce 
+---method executes a reducer function on each element of the array,
+---resulting in a single output value
+
+Syntax
+reduce(callBackFunc(Accumulator,Current Val,Current Index , Source Array){ },initialValue)
+-Accumulator => the accumulated value previously returned in the last invocation
+-Current Val => the current element being processed in the array
+-Index => The index of the current element being processed in the array.
+--------Start from index 0 if an initialValue is provided.
+--------Otherwise , it start from index 1 .
+Array => The Current Array
+
+
+-Longest Word
+-Remove Character + Use Reduce
+
+*/ 
+
+// const array1 = [1, 2, 3, 4];
+// const reducer = (accumulator, currentValue) => accumulator + currentValue;
+// // 1 + 2 + 3 + 4
+// console.log(array1.reduce(reducer)); // 10
+// // 5 + 1 + 2 + 3 + 4
+// console.log(array1.reduce(reducer, 5)); // 15
+
+
+const amin =[10,20,30,40,50];
+const ami =amin.reduce(function(accumulator, currentValue,index,array){
+return accumulator + currentValue;
+},5);
+console.log( ami);
+
+// let amine = [10,20,30,40,50];
+// // console.log(`${accumulator}`);
+// // console.log(`${currentValue}` );
+// // console.log(index );
+// // console.log(array );
+// let am =amine.reduce(accumulator, currentValue,()=>{
+// return accumulator + currentValue;
+// });
+// console.log(am);
+
+
+let theBiggest = ["Bla","Propaganda","Other","AAA","Battery","Test"];
+
+let check = theBiggest.reduce(function (acc , current){
+console.log(`Acc => ${acc}`);
+console.log(`Current Element => ${current}`);
+// console.log(`Current Element Index => ${index}`);
+// console.log(`Array => ${arr}`);
+console.log(acc.length > current.length ? acc :current );
+console.log(`#######`);
+return acc.length > current.length ? acc :current ;
+});
+
+
+
+let removeChars = ["E","@","@","L","Z","@","@","E","R","@","O"];
+let finalString = removeChars.filters(function(ele){
+return ! ele.startsWith("@")
+}).reduce(function(acc,current){
+    return `${acc}${current}`;
+})
+console.log(finalString);
+
+    </script>
+</body>
+</html>

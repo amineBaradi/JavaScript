@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Learning About Nodes</title>
+
+  <style>
+    /* * { border: 2px solid #dedede; padding: 15px; margin: 15px; }
+    html { margin: 0; padding: 0; }
+    body { max-width: 600px; font-family: sans-serif; color: #333; }
+    ul:hover{
+color: red;
+background-color: fuchsia;
+    } */
+    h1{
+      transition: 2s 2s ease-in-out;
+      background-color:white ;
+     
+    }
+    h1:hover{
+      font-weight: bold;
+      color:green,yellow;
+      background-color: aqua;
+      width: fit-content;
+     
+      /* transform: scale(2) skew(15deg) rotate(1turn); */
+    }
+   
+div,ul{
+  border: 1px solid ;
+  list-style-type: none;
+  
+}
+  </style>
+</head>
+
+<body>
+  
+  <h1>Shark World</h1>
+  <p>The world's leading source on <strong>shark</strong> related information.</p>
+  <h2>Types of Sharks</h2>
+  <ul>
+    <li>Hammerhead</li>
+    <li>Tiger</li>
+    <li>Great White</li>
+  </ul>
+
+  <!-- <div>
+ <h1>Les Payes Arabes </h1> 
+ <p>Il ya 22 payes <strong>Arabes</strong> </p>
+ <ul>
+  <li>Maroc</li>
+  <li>Syria</li>
+  <li>Pelistina</li>
+  <li>Iraque</li>
+ </ul>
+</div> -->
+
+
+
+
+ 
+</table>
+</body>
+
+<script>
+
+  const h1 = document.getElementsByTagName('h1')[0];
+  const p = document.getElementsByTagName('p')[0];
+  const ul = document.getElementsByTagName('ul')[0];
+
+  // ul.firstElementChild.style.background= 'yellow';
+    //  ul.firstChild.style.background='red';   //??
+
+//   for (let element of ul.children){
+//     element.style.background = 'yellow';
+// }
+ 
+
+
+// for( let element of p.childNodes){
+//     console.log(element);
+// }
+
+document.body.children[3].firstElementChild.style.background = 'fuchsia';
+
+// const tiger = ul.children[1];
+
+// tiger.nextElementSibling.style.background = 'coral';
+
+// tiger.previousElementSibling.style.background = 'aquamarine';
+</script>
+
+</html>

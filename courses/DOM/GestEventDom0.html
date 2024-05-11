@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> les evenement Gestion des evenements avec DOM</title>
+</head>
+<body>
+
+
+    <h2 onclick="alert('haw are you');"> les evenement geres avec des attributs</h2>
+    <p>premier paraghraph</p>
+    <p onclick="this.textContent=Date()">deusiem paraghraph</p> 
+    <p>troisiem paraghraph</p>
+
+
+
+
+
+    <button onclick="let p1=document.querySelector('p');
+    p1.textContent=Date();"
+
+
+    onmouseover="let p1=document.querySelector('p');
+    p1.style.color='red';"
+
+
+    onmouseleave="let p1=document.querySelector('p');
+    p1.style='auto';"></button><br>
+
+
+    <button id="ami" onclick="let p2=document.getElementById('ami');p2.style.backgroundColor='green';" >Ciquer Ici</button>
+    
+
+
+<button onclick="majStyleP4();">Nodif Style</button>
+
+
+
+<a href="http://google.ma" onclick="alert('action par defaout inhibèè');
+return false">google</a>
+
+<!-- onmouseover  /    onmouseleave onclick  /  -->
+
+</body>
+</html>

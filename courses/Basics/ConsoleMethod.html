@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ConsoleMethods</title>
+  </head>
+  <a href="https://262.ecma-international.org/">EcmaScript _ ES6</a>
+
+  <!-- print(f"Hello {my_name}")         //py
+  console.log(`Hello ${my_name}`);      // js -->
+  
+  <body>
+    <script>
+      /* 
+    ConsoleMethods
+--log
+--error
+--table
+
+Web API  =>  search MDN
+
+directive %c
+//=====================================================================================
+
+================console
+100 * 200
+100 + 200
+document.write("<h1>Page Title</h1>")
+document.querySelector("h1").style.color = "blue"
+document.querySelector("h1").style.fontSize ="80px"
+---
+//======================================================================================
+================Window
+Window.close()
+---
+//======================================================================================
+================document
+document.write
+---
+
+//======================================================================================
+
+console {debug: ƒ, error: ƒ, info: ƒ, log: ƒ, warn: ƒ, …}
+assert: ƒ assert()
+clear: ƒ clear()
+context: ƒ context()
+count: ƒ count()
+countReset: ƒ countReset()
+debug: ƒ debug()
+dir: ƒ dir()
+dirxml: ƒ dirxml()
+error: ƒ error()
+group: ƒ group()
+groupCollapsed: ƒ groupCollapsed()
+groupEnd: ƒ groupEnd()
+info: ƒ info()
+log: ƒ log()
+memory: MemoryInfo {totalJSHeapSize: 5231995, usedJSHeapSize: 4151495, jsHeapSizeLimit: 2172649472}
+profile: ƒ profile()
+profileEnd: ƒ profileEnd()
+table: ƒ table()
+time: ƒ time()
+timeEnd: ƒ timeEnd()
+timeLog: ƒ timeLog()
+timeStamp: ƒ timeStamp()
+trace: ƒ trace()
+warn: ƒ warn()
+Symbol(Symbol.toStringTag): "Object"
+[[Prototype]]: Object
+*/
+//=======================================================================================
+      console.log("hello from js file");
+      // console.error("error");
+      console.table(["amine", "baradi", "amino"]);  //array
+      console.log(
+        "hello from %cjs %cfile",
+        "color:red;font-size:40px",
+        "color:green;font-size:50px"
+      );
+//=======================================================================================
+
+      console.assert();
+      // console.clear();
+      // console.context();
+      console.count();
+      console.countReset();
+      // console.debug();
+      console.dir("hello from js file");
+      console.dirxml("hello from js file");
+      // console.group(["amine","baradi","amino"]);
+      // console.groupCollapsed(["amine","baradi","amino"]);
+      // console.groupEnd();
+      console.info(["amine", "baradi", "amino"]);
+      console.memory();
+      console.profile();
+      console.profileEnd();
+      console.time();
+      console.timeEnd();
+      console.timeLog();
+      console.timeStamp();
+      console.trace();
+      console.warn();
+    </script>
+  </body>
+</html>

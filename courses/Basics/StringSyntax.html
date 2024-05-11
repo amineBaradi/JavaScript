@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Escape Sequences</title>
+</head>
+
+<body>
+    <script>
+        /*   
+        string syntax + Character Espace Sequences    <=  Search
+        \ Espace + Line Continue
+        \n
+        */
+        
+        console.log("amine baradi 'IL a dit bein'");
+        console.log('amine baradi "ILa dit bein"');
+
+        console.log("amine baradi \"IL a dit bein\"");
+        console.log('amine \\ baradi \'I La dit bein\'');
+
+        console.log('amine \n baradi \n"I La dit bein"');
+        console.log('amine\
+        baradi\
+        "I La dit bein"');
+            
+        console.log("my names is amine baradi \"i am teacher\"");
+        console.log("my nams is amine baradi i am teacher `for englich but i am arabic`");
+        console.log("my nams is amine baradi\n i am teacher \n`for englich but \n i am arabic`");
+
+        // template literals
+//=================================================================================================        
+
+        //Concatination
+        let aa="We Love";
+        let bb="javaScript";
+        let cc = " ";
+        alert(aa +"   " + bb);
+        document.write(aa , bb); 
+        console.log(aa,bb);
+//=================================================================================================        
+        //Template Literals (Template Strings)        
+        let a = "We Love";
+        let b = "JavaScript";
+        let c = "And";
+        let d = "Programing";
+
+        console.log(a + " \" \" " + b +
+            "\n " + c + " " + d);
+//=================================================================================================        
+//         let y = "wath";
+//         let x = "is";
+//         let w = 'this';
+//         let u = 'amine';
+//         console.log(y + " " + x + " \"\" " + w + " \n" + u);
+//         console.log(` ${y} "" ${x} ${w} ${u}`);
+//         console.log(` ${a} ${b} "" ' \\' ${c} ${d}  {100 * 50} `); ECM6 
+
+            let title = "Amine"
+            let desc = "Mobile Developer"
+
+            let markup = `
+            <div class="card">
+                <div class="child">
+                    <h2>${title}</h2>
+                    <p>${desc}</p>
+                    </div>
+                    </div>
+            ` ;
+            document.write(markup);
+    
+    </script>
+</body>
+
+</html>
+<!-- alt gr +8 = \  -->
+<!-- alt gr + 7 =  ``  -->

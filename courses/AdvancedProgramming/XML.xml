@@ -1,0 +1,23 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<RootDTO>
+   <destination>
+      <name>companyName</name>
+   </destination>
+   <orderData>
+      <amount>123.45</amount>     
+      <items>
+         <element>            
+            <binding>saddle</binding>
+            <components>
+               <element>                            
+                  <width>210</width>
+               </element>
+            </components>
+            <description>Introductory x</description>         
+         </element>
+      </items>
+   </orderData>
+</RootDTO>
+
+<!-- How to Convert this code to JSON -->

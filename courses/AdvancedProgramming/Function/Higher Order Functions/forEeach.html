@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Higher Order Functions - ForEach And Practice</title>
+    </head>
+    <body>
+    <u>
+        <li class="active">One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </u>
+    <div class="content">
+        <div>Div One</div>
+        <div>Div Two</div>
+        <div>Div Three</div>
+    </div>
+    <script src="main.js"></script>
+    <script>
+      /*
+        forEach
+        ---method executes a provided function once for each array element.
+
+        Syntax forEach(callBackFunction(Element , Index , Array){},thisArg)
+        -Element => The current element being processed in the array.
+        -Index => The index of the current element being processed in the array.
+        -Array => The current Array
+
+        Note
+        -Doesnt Return Anything [Undefined]
+        -Break Will Not Break The Loop
+        */
+      //==============================================================================================================
+
+      const arr = ["a", "b", "c"];
+      arr.forEach(function (element) {
+        console.log(element);
+      });
+      // a
+      // b
+      // c
+    </script>
+  </body>
+</html>
+ف

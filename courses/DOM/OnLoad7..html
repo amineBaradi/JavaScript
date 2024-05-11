@@ -1,0 +1,30 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=div, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <h1>onload , onscrol ,Onresize </h1>
+   <div id="main">My Main Div</div> 
+   <button>ChangeColor</button>
+   <script> 
+let load=document.getElementById("main");
+window.onresize=function(){
+    'user strict';
+    document.write('Dom Is Ready');
+    alert('You Are Scrolling Now ');
+    alert("You Are Window Is Resize")
+}
+
+   </script>
+</body>
+</html>

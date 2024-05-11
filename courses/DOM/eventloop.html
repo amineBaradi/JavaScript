@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<pre id="rabbit">
+    |\   /|
+     \|_|/
+     /. .\
+    =\_Y_/=
+     {>o<}
+  </pre><br><br>
+  <button onclick="hide()">Hide()</button>
+  <br><br>
+  <form onsubmit="alert('submit!');return false">
+    First: Enter in the input field <input type="text" value="text"><br>
+    Second: Click "submit": <input type="submit" value="Submit">
+  </form>
+  <br><br>
+  <form onsubmit="return false">
+    <input type="text" size="30" value="Focus here and press enter">
+    <input type="submit" value="Submit" onclick="alert('click')">
+   </form>
+   <br><br>
+<h1 id="elem">Hello for John!</h1>
+<h1 id="elem">Hello from the script!</h1>
+<button id="elem" onclick="alert('Click!');">Autoclick</button>
+<div id="progress"></div>
+<body>
+   <script>
+
+// let i = 0;
+
+// let start = Date.now();
+
+// function count() {
+
+//   // do a heavy job
+//   for (let j = 0; j < 1e9; j++) {
+//     i++;
+//   }
+
+//   alert("Done in " + (Date.now() - start) + 'ms');
+// }
+
+// count();
+// let i = 0;
+
+
+
+let start = Date.now();
+
+function count() {
+
+  // القيام بجزء من المهمّة الثقيلة (*)
+  do {
+    i++;
+  } while (i % 1e6 != 0);
+
+  if (i == 1e9) {
+    alert("Done in " + (Date.now() - start) + 'ms');
+  } else {
+    setTimeout(count); // برمجة الاستدعاء الجديد (**)
+  }
+
+}
+
+count();
+
+
+
+// let i = 0;
+
+// let start = Date.now();
+
+// function count() {
+
+//   // نقل البرمجة إلى البداية
+//   if (i < 1e9 - 1e6) {
+//     setTimeout(count); // برمجة الاستدعاء التالي
+//   }
+
+//   do {
+//     i++;
+//   } while (i % 1e6 != 0);
+
+//   if (i == 1e9) {
+//     alert("Done in " + (Date.now() - start) + 'ms');
+//   }
+
+// }
+
+// count();
+
+
+
+
+
+
+
+  function count() {
+    for (let i = 0; i < 1e6; i++) {
+      i++;
+      progress.innerHTML = i;
+    }
+  }
+
+  count();
+ 
+
+
+ 
+  // تأتي المزيد من التفاصيل مع الحدث إلى المعالج
+  elem.addEventListener("hello", function(event) {
+    alert(event.detail.name);
+  });
+
+  elem.dispatchEvent(new CustomEvent("hello", {
+    detail: { name: "John" }
+  }));
+ 
+
+
+
+  let i = 0;
+
+  function count() {
+
+    // القيام بجزء من مهمّة ثقيلة (*)
+    do {
+      i++;
+      progress.innerHTML = i;
+    } while (i % 1e3 != 0);
+
+    if (i < 1e6) {
+      queueMicrotask(count);
+    }
+
+  }
+
+  count();
+ 
+   
+  // let i = 0;
+
+  // function count() {
+
+  //   // القيام بجزء من المهمّة الثقيلة (*)
+  //   do {
+  //     i++;
+  //     progress.innerHTML = i;
+  //   } while (i % 1e3 != 0);
+
+  //   if (i < 1e7) {
+  //     setTimeout(count);
+  //   }
+
+  // }
+
+  // count();
+ 
+
+
+
+
+  // ... document الالتقاط على مستوى
+  document.addEventListener("hello", function(event) { // (1)
+    alert("Hello from " + event.target.tagName); // Hello from H1
+  });
+
+  // elem الإرسال من ...
+  let event = new Event("hello", {bubbles: true}); // (2)
+  elem.dispatchEvent(event);
+
+  // و يظهر الرسالة document سيشتغل المعالج المسند إلى
+
+
+
+
+//   let event = new Event("click");
+//   elem.dispatchEvent(event);
+
+
+//   menu.onclick = function() {
+//   // ...
+
+//   // إنشاء حدث مخصّص ببيانات عنصر القائمة الذي نُقر
+//   let customEvent = new CustomEvent("menu-open", {
+//     bubbles: true
+//   });
+
+//   // إرسال الحدث المخصّص بشكل لا متزامن
+//   setTimeout(() => menu.dispatchEvent(customEvent));
+// };
+
+
+// setTimeout(() => alert("timeout"));
+
+// Promise.resolve()
+//   .then(() => alert("promise"));
+
+// alert("code");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function hide() {
+    let event = new CustomEvent("hide", {
+      cancelable: true // preventDefault بدون تلك الراية لا يعمل
+    });
+    if (!rabbit.dispatchEvent(event)) {
+      alert('The action was prevented by a handler');
+    } else {
+      rabbit.hidden = true;
+    }
+  }
+
+  rabbit.addEventListener('hide', function(event) {
+    if (confirm("Call preventDefault?")) {
+      event.preventDefault();
+    }
+  });
+
+</script> 
+</body>
+</html>

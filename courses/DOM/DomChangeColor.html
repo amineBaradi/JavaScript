@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=div, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id="main">My Main Div</div> 
+   <button onclick="ChangeColor()">ChangeColor</button>
+  
+  
+  
+  
+  <script>
+
+    let myElement=document.getElementById('main');
+    function ChangeColor(){
+
+        myElement.style.color='red';
+    }
+
+    muybutton =document.querySelector('button');
+    // muybutton.onclick=function(){
+    //     'user srict';
+    //     myElement.style.color='red';
+    // }
+    function ChangeColor(){
+
+myElement.style.color='red';
+}
+muybutton.onclick=ChangeColor;
+</script>
+</body>
+</html>

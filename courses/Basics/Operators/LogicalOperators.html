@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical Operators</title>
+</head>
+<button>Valider</button>
+<body>
+    
+    <!-- Logical Operators
+    !Not
+    &&And
+    ||Or
+    
+    -->
+    <script>
+        console.log(!true); console.log(!false);
+        function amine(){
+            let butt =document.querySelector('button');
+            butt.innerHTML='submit'
+            console.log(butt);
+            
+        }
+        
+        amine();
+
+
+        console.log(!(10 == "10"));
+        console.log(10 == "10" && 10 > 8 && 10>=10);  // true
+        console.log(10 == "10" && 10 > 8 && 10>40);  // false
+        console.log(10 == "10" || 10 > 8 || 10>40);  // true
+
+        console.log(10==="10" || 10===10);
+    </script>
+</body>
+</html>

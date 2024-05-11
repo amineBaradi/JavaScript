@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Rest Parameters</title>
+</head>
+<body>
+    <script>
+/*
+Function
+        Reset Parameters                              ...
+        Only one Allowed
+        Must Be last Element
+*/ 
+
+//=======================================================================================================
+// function  clc(num1,num2,num3){
+//     return num1+num2+num3;
+// };
+// console.log(clc(1,2,3));
+//=======================================================================================================
+function  clc(...num){
+    return num1+num2+num3;
+};
+console.log(clc(1,2,3));
+
+//=======================================================================================================
+
+function clc(...numbers){
+    console.log(Array.isArray(numbers));    //true
+    
+    let result = 0;
+    
+    for(let i=0;i<numbers.length;i++){
+    // console.log(numbers[i]);
+
+    result += numbers[i];   // result = result + numbers[i]
+    
+}
+    return `Finaly Result Is ${result}`;
+}
+
+console.log(clc(1,2,3));
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events =>
+                    click
+                    Double click
+                    / Mouseenter
+                    / Mouseleave
+                    / Hover
+    </title>
+</head>
+<body>
+    <button>click</button>
+    <p>Welcom To Events</p>
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+
+$(document).ready(function(){
+$("button").dblclick(function(){
+    // $("p").hide();
+    $("p").css("fontSize","20px");
+    $("p").css("backgroundColor","green");
+})
+                           //CodeJqueryكود كامل
+});
+
+
+
+
+
+
+// $(document).ready(function(){
+// $("button").click(function(){
+//     $(this).hide();  //thisكانني اتحدث عن بوتون
+// });
+// });
+// $(document).ready(function(){
+// $("button").click(function(){
+//     $("button").hide();  //thisكانني اتحدث عن بوتون
+// });
+// });
+
+
+
+
+$(document).ready(function(){
+$("button").dblclick(function(){
+    $("button").hide();  //thisكانني اتحدث عن بوتون
+});
+});
+
+
+
+// $(document).ready(function(){
+// $("button").mouseenter(function(){
+//     // $("p").hide();
+//     $("p").css("fontSize","20px");
+//     $("p").css("backgroundColor","red");
+// })
+//   $("button").mouseleave(function(){
+//     // $("p").hide();
+//     $("p").css("fontSize","20px");
+//     $("p").css("backgroundColor","green");
+// })
+// //CodeJqueryكود كامل
+// });
+
+// $(document).ready(function(){
+// $("button").mouseenter(function(){
+//     // $("p").hide();
+//     $(this).css("fontSize","20px");
+//     $(this).css("backgroundColor","red");
+// })
+//   $("button").mouseleave(function(){
+//     // $("p").hide();
+//     $(this).css("fontSize","20px");
+//     $(this).css("backgroundColor","green");
+// })
+ 
+ 
+$(document).ready(function(){
+$("button").hover(function(){
+    // $("p").hide();
+    $(this).css("color","blue");
+    $("p").css("backgroundColor","red");
+})
+});
+
+
+// hover(function(){ },function(){ });
+
+// $(document).ready(function(){
+// $("button").hover
+// (
+// function()
+// {
+//     // $("p").hide();
+//     $(this).css("color","yellow");
+//     $("p").css("backgroundColor","red");
+// }
+// ,
+// function(){
+//     // $("p").hide();
+//     $(this).css("color","blue");
+//     $("p").css("backgroundColor","green");
+// }
+// )
+// });
+    </script>
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+</head>
+<body>
+
+  <!-- 
+new Date();//Print Current Date & Time
+new Date(Millsecend[5000 = 5secends]);//Print Millsecend from utc 1 jan 1970  00:00:00  
+new Date(DataString[Month,Day,Hour:Minutes,Secends]);//Can Add Date String
+new Date(Year,Month,Day,Hour,Minutes,Secends,Millsecend)
+  -->
+  <!-- 
+Full Format
+Long Format
+Short Format
+Iso Format
+
+
+Js Ignore commas
+Js Month Insensitive
+[Month Day Year] Or [Day Month Year]
+
+    -->
+    <!-- 
+      getDate() // Day Of The month 1-31
+      getDay()  //Day Of theWeek  0-6
+      getFullYear() //Get The Full Year
+      getHours()  // Get Hours 0-59
+      getMinutes() // Get Minutes 0-59
+      getSecends()  //Get Secends 0-59
+      getMillSecends() //Get MilliSecends 0-999
+      getTime()   //Number Of MilliSecends From 1970 Or Specific Date
+      getTimezoneOffset()  // Get Def Bettwen Utc & localtime
+         -->
+         <!-- 
+      setDate(day[requir]) 
+      setFullYear(Year[requir],Month[Opt],Day[Opt])  
+      setHours(Hours[requir],Minutes[Opt],Secends[Opt],MilliSecends[Opt])  
+      setMinutes(Minutes[require],secends[Opt],MilliSecends[Opt]) 
+      setSecends(secends[requir],MilliSecends[Opt])  
+      setMillSecends(MilliSecends[requir])  
+      SetMonth(Month[requir],Day[Opt])
+          -->
+          <!-- 
+            Now()
+            Parse()
+           -->
+  <a href="https://www.timeanddate.com/">timeanddate</a>
+ 
+<script>
+  /*
+  // https://www.timeanddate.com/
+  Unix Time Wiki..
+
+  Date And Time 
+  -Date Constructor
+
+  Static Methods
+  -Date.now()
+
+
+  -To Track Time you Need Starting Point
+  -Epoch Time Or Unix Time In Computer Science Is The Number os Seconds Since January 1 , 1970.
+  -Why 1970 [829 Days To 136 Years]
+
+  Search For 
+  Years 2038 Problem in Computer Science
+  */
+
+// let dateNow = new Date();
+// console.log(dateNow);
+// console.log(typeof dateNow);
+//console.log(dateNow.);//Click sur ctrl + space
+// let time = new Date();
+// console.log(time);
+// console.log(Date());
+
+
+// console.log(Date.now()); //1000 Mill = 1 Second
+// let seconds = Date.now()/1000; //Number Of Seconds
+// console.log(seconds);
+
+// let Minutes = seconds / 60; //Number Of Minutes
+// console.log(Minutes);
+
+// let hours = Minutes /60; //Number Of Hours
+// console.log(hours);
+
+// let jour = hours / 24;//Number Of Jour
+// console.log(jour);
+
+// let years = jour / 365;//Number Of Years
+// console.log(years);
+
+//===========================================================================================================================
+/*
+Date And Time 
+-getTime() => Number Of Milliseconds
+-getDate() => Day Of The Month
+-getFullYear()
+-getMonth() => Zero Based
+-getDay() => Day Of The Week
+-getHours()
+-getMinutes()
+-getSeconds()
+*/
+// let timeDate = new Date();
+// let birthday = new Date("Oct 26 ,2002")
+// let dateDiff = dateNow - birthday;
+// console.log(dateDiff);
+// console.log(dateDiff / 1000 / 60 /60 /24 / 365);
+// console.log(timeDate.getTime());
+// console.log(timeDate.getDate()); //Days Of the Mounth
+// console.log(timeDate.getDay()); //Days Of the Week
+// console.log(timeDate.getFullYear());
+// console.log(timeDate.getMonth()); //Start index 0
+
+
+// let theDay = timeDate.getDate();  //عدد الايام في الشهر
+// console.log(timeDate);
+// console.log(theDay);
+
+// timeDate = new Date(2002,9,26);
+// theDay = timeDate.getDate();
+// console.log(timeDate);
+// console.log(theDay);
+
+// let timeDate1 = new Date();
+//  theHours = timeDate1.getTimezoneOffset();
+//   console.log(timeDate1);
+//   console.log(theHours);
+
+//===========================================================================================================================
+/*
+-setTime(Milliseconds)
+-setDate() => Day Of The Month [Negative And Positive]
+-setFullYear(year , month => Optional[0-11],day =>Optional[1-31])
+-setMonth(Month[0-11],Day =>Optional[1-31] [negative And Positive])
+-setHours(Hours[0-23],Minutes => Optional [0-59],Second=>Optional[0-59,Ms => Optional [0,999]])
+-setMinutes(Minutes[0-59],Seconds=>Optional[0-59],MS=>Optional[0-999])
+-setSecond(Second =>[0-59],MS => Optional [0-999])
+*/ 
+// let settDate= new Date();
+// console.log(settDate);
+
+// settDate.setTime(10);
+// console.log(settDate);
+
+// settDate.setDate(10);
+// console.log(settDate);
+
+// settDate= new Date();
+// settDate.setFullYear(2002,9,26);
+// console.log( settDate);
+
+// settDate= new Date();
+// settDate.setMonth(600000); //Minutes
+// console.log(settDate);
+
+// settDate= new Date();
+// settDate.setHours(2);
+// console.log( settDate);
+
+// settDate= new Date();
+// settDate.setMinutes(600000); //Minutes
+// console.log(settDate);
+
+// settDate= new Date();
+// settDate.setMilliseconds(600000); //Minutes
+// console.log(settDate);
+
+
+// settDate= new Date();
+// settDate.setseconds(600000); //Minutes   tester Negative and positive
+// console.log(settDate);
+
+//===========================================================================================================================
+/*
+Date And Time
+
+--new Date(timestamp)
+--new Date(Date String)
+--new Date(Numeric Values)
+
+Format
+"Oct 25 1982"
+"10/25/1982"
+"1982-10-25" => ISO International Standard
+"1982 10"
+"1982"
+"82"
+1982,9,25,2,10,0
+1982,9,25
+"1982-10-25T06:10:00Z"
+
+Date.parse("String") //Read Date From A String
+*/
+// console.log(Date.parse("Oct 25 1982"));
+
+// let date1 = new Date(0);
+// console.log(date1);
+
+// let date2 = new Date(404377200000);
+// console.log(date2);
+
+// let date3 = new Date();
+// console.log(date3);
+
+// let date4 = new Date();
+// console.log(date4);
+
+// let date5 = new Date();
+// console.log(date5);
+
+// let date6 = new Date();
+// console.log(date6);
+
+// let date7 = new Date();
+// console.log(date7);
+
+// let date8 = new Date();
+// console.log(date8);
+
+// let date9 = new Date("1982-10-25T06:10:00Z"); //1982-10-25T06:10:00
+// console.log(date9);
+//===========================================================================================================================
+/*
+Date And Time
+-Track Operation Time
+
+search
+-performance.now()
+-performance.now()
+*/ 
+// Start Time
+// let start = new Date();
+
+//Operation
+// for(let i = 0 ; i < 100000 ; i++){
+//   // document.write(`<div>${i}</div>`);
+//   let div = document.createElement("div");
+//   div.appendChild(document.createTextNode(i));
+//   document.body.appendChild(div);
+// }
+
+//Time End
+// let end = new Date();
+
+// Operation Duration
+// let duration = end - start ;
+// console.log(duration);
+//===========================================================================================================================
+/*
+Generators
+-Generator Function Run Its Code When Required.
+-Generator Function Return Special Object [Generator Object]
+-Generator Are Iterable
+*/ 
+function* generatorNumbers(){
+  yield 1;
+  // alert("Hello After yield One")
+  console.log("Hello After yield One");
+  yield 2;
+  yield 3;
+  yield 4;
+}
+// let generator = generatorNumbers();
+// console.log(typeof generator);
+
+// console.log(generator.next());
+// console.log(generator.next().value);
+// console.log(generator.next().done);
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+
+// for(let value of generatorNumbers ){
+//   console.log(value);
+// }
+// for(let value of generator){
+//   console.log(value);
+// }
+// if(generatorNumbers===generator){
+//   console.log("Yes");
+// }
+//===========================================================================================================================
+/*
+Generators
+-Delegate Generator
+*/ 
+function* generatorNums(){
+yield 1;
+yield 2;
+yield 3;
+}
+function* generateLetters(){
+yield "A";
+yield "B";
+yield "C";
+}
+
+function* generateAll(){
+  yield* generatorNums();
+  yield* generatorNums();
+  yield* [4,5,6];
+}
+let generator1 =  generateAll();
+console.log(generator1.next());
+console.log(generator1.next());
+console.log(generator1.next());
+console.log(generator1.next());
+console.log(generator1.next());
+console.log(generator1.next());
+console.log(generator1.return("Z"));
+console.log(generator1.next());
+console.log(generator1.next());
+console.log(generator1.next());
+
+//===========================================================================================================================
+/*
+Generators
+-Generators Infinite Numbers
+-Use Return Inside Generators
+*/ 
+
+function* generatorNumbers(){
+  // yield 1;
+  // yield 2;
+  // // return "A";
+  // yield 3;
+  // yield 4;
+  let index = 0 ;
+  while(true){
+    yield index++;
+  }
+}
+
+let generator2 = generatorNumbers();
+console.log(generator2.next());
+console.log(generator2.next());
+console.log(generator2.next());
+console.log(generator2.next());
+//===========================================================================================================================
+/*
+Modules
+-Import And Export
+*/
+/*
+Modules
+-Export Alias
+-Named Export
+-Default Export
+-Import All
+*/ 
+
+//===========================================================================================================================
+
+
+
+
+
+
+//let time1 = new Date(10000);
+  //console.log(time1);
+
+
+  // let time2 = new Date("sat , Octobre,2002,9,26");
+  // console.log(time2);
+
+
+  // let timeA = new Date("sat ,,,,,,,,,,OCTOBRE  Octobre 2002 9 26  10:30:00");
+  // console.log(timeA);
+  
+  // let time3 = new Date(2002,9,26);
+  // console.log(time3);
+
+  // let timeD = new Date("2002/ 26/ 9"); //invalid Data لان اليوم يسبق الشهر في هده الحالة
+  // console.log(timeD);
+
+  // let timeD = new Date("2002/ 9/ 26"); //هنا صحيح
+  // console.log(timeD);
+
+//    let timeanddate=new Date("YYYY-MM-dd T HH:mm:sszzz")
+//  console.log( timeanddate);
+
+
+
+
+
+
+
+
+//  الدالة Date.now() تعيد كم ملي ثانية مضت منذ 1 January 1970 00:00:00 UTC.
+// var timeanddate1= new Date();
+// now=Date.now()
+// console.log(now/12/30/24/60/60);
+
+// var timeanddate1= new Date();
+// now=Date.parse("2002/9/26")
+// console.log(Math.round(now/12));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

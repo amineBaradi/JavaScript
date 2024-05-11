@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset=utf-8 />
+    <title>Fonctions avancées</title>
+    
+    </head> 
+    <body>
+        <div>
+            <p >parametre du reste</p> 
+        </div>
+        <script>
+            function somme(...tab)
+            {
+                let s=0;
+                for(let nb of tab)
+                 s+=nb;
+                return s;
+            }
+
+           // alert(somme(4,8,2,10,45,24));
+
+            function test(nom,prenom,...loisir)
+            {
+                let str=nom+" "+prenom;
+                for(let l in loisir)
+                str+= " "+loisir[l];
+                return str;
+            }
+            //alert(test("Sami","Ali","foot","escrime","lecture"));
+
+            let tb1=[1,1,-1,2];
+            let tb2=[8,-1,2,2,1]
+            let tb3=[2,2]
+            //alert(Math.max(...tb1,...tb2));
+           // alert(produit(...tb1,...tb2,...tb3));
+           /* function produit(...st)
+            {
+                let prod =1;
+                for(let elt of st)
+                 prod*=elt;
+
+                return prod;
+            }*/
+
+           // alert(produit(...tb1,...tb2,...tb3));
+           //res()
+            let res=function(){alert("bonjour");}
+            //res();
+
+           /* let som=function somme(a,b)
+            {
+                return a+b;
+            }*/
+
+            let som=(a,b)=> a+b;
+           //alert(som(3,7)) 
+
+           let dbl=n=>n*2;
+          // alert(dbl(45))
+
+           let pr=(...st)=>
+            {
+                let prod =1;
+                for(let elt of st)
+                 prod*=elt;
+               alert(prod);
+            }
+
+        //   pr(...tb1,...tb2)
+
+        function essaiCallback(tab,f)
+        {
+            let v=[];
+            for(let i=0;i<tab.length;i++)
+             v.push(f(tab[i]))
+             return v;
+        }
+        function g(x)
+        {
+            return x*2;
+        }
+        let t=[2,5,6,7]
+      //  alert(essaiCallback(t,g));
+
+        //alert(essaiCallback(t,function(n){return n*2;}))
+
+      //  alert(essaiCallback(t,n=>n*2));
+
+       // alert(essaiCallback(t,n=>n*n));
+
+       // alert(essaiCallback(t,n=>Math.pow(n,3)));
+
+        function affich(fc)
+        {
+            let x=prompt("donner un nom");
+            alert(fc(x));
+        }
+    affich(function(n){return n.toUpperCase();});
+
+    affich(n=>n.toLowerCase());
+
+    document.querySelector("p").addEventListener("click",function(){alert("au revoir")})
+        </script>
+    </body>
+</html>
+        
+            

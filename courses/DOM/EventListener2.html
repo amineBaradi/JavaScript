@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Events</title>
+</head>
+<body>
+    <button>Click me</button>
+    <p>Try to change me.</p>
+
+
+
+<script>
+
+
+
+// الدالة المراد تنفيذها عند وقوع الحدث والتي تعدِّل محتوى الفقرة
+// const changeText = () => {
+//     const p = document.querySelector('p');
+//     p.textContent = "I changed because of an event listener.";
+// }
+
+
+
+
+// الاستماع لحدث النقر
+// const button = document.querySelector('button');
+// button.addEventListener('click', changeText);
+
+
+
+const p = document.querySelector('p');
+const button = document.querySelector('button');
+
+const changeText = () => {
+    p.textContent = "Will I change?";
+}
+
+const alertText = () => {
+    alert('Will I alert?');
+}
+
+// // يمكن إضافة عدة مستمعات إلى الحدث نفسه والعنصر نفسه أيضًا
+button.addEventListener('click', changeText);
+button.addEventListener('click',alertText)
+
+
+
+// دالة مجهولة يراد تنفيذها عند إطلاق الحدث
+// button.addEventListener('click', () => {
+//     p.textContent = "Will I change?";
+// });
+
+
+
+// من المُمْكِن أيضًا استخدام دالّة removeEventListener() لإزالة حدث واحد أو جميع الأحداث من عنصر.
+
+// button من العنصر alert حذف الدالة
+// button.removeEventListener('click', alertText);
+// يمكنك استخدام addEventListener() على الكائنين document و window.
+
+
+
+</script>
+</body>
+</html>

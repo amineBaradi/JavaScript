@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Element Children / Children / childNodes
+            [First/last]child,[First/last]Elementchild
+             <!-- AppendChild  (الحاق) -->
+             InsertBefore
+             RemoveChild
+             Node[  Name   ,    Value    ,     type  ]
+             CloneNode
+             ParentElement   / parentNode
+             NextSibling   / NextElementSibling  PreviousSibling   / PreviousElementSibling
+    </title>
+</head>
+<body>
+    <!-- 
+        Start Work Area
+     -->
+
+    <div id="main">
+        <!-- Element Node -->
+        <button>close</button>         
+
+         <!--Text Node -->
+        Welcome
+
+     <h2>Heading</h2>   <!-- Element Node -->
+        Testing
+
+        <!-- html Comment -->
+
+        <p class="test">Good paraghraphe</p>
+    </div>
+    <!-- End Work Area -->
+    <div id="new"></div>
+    <script>
+        var child = document.getElementById('main'),
+        mybutton=child.firstElementChild;       //firstChild
+        console.log(mybutton);
+        console.log(mybutton.parentElement);
+        console.log(mybutton.parentNode);
+mybutton.onclick=function(){
+    'use strict';
+this.parentNode.style.display='None';            //this===mybutton
+};
+
+
+
+
+
+
+        // colone=document.getElementById('new'),
+        // mycopy=child.firstElementChild.coloneNode(false);
+        // colone.appendChild(mycopy);
+
+        // alert(child.children.length);
+        // alert(child.childElementCount);        //les deuxMethodsFaitLaMèmeChose
+
+        // console.log(child.children[0].className)
+        // alert(child.childNodes.length);
+        // alert(child.children[0].textContent);//حددت الاب قلت له اريد الطفل الاول ومن بعد اريد تيكست كونتونت ديالو
+        
+        
+        
+        console.log(child.firstElementChild);
+        console.log(child.firstChild);
+        console.log(child.lastChild);
+        console.log(child.childNodes[0]);
+    
+    
+    // Creat Div Element 
+        childAppend = document.createElement('div'),
+        child.appendChild(childAppend);
+
+        // Creat Text Node
+        text=document.createTextNode("hello bhroter"),
+        child.appendChild(text);
+        childAppend.appendChild(text);
+    
+    mynew=document.createElement('p'),
+    child.appendChild(mynew);
+    text=document.createTextNode("le paraghraphe et corect"),
+    mynew.appendChild(text);
+
+//     child.insertBefore(text,child.firstElementChild);
+//    child.insertBefore(text,child.childNodes[5]);
+//     // console.log(child.childNodes[5]);
+//     alert(child.childNodes[5].nodeName);
+//     alert(child.childNodes[3].tagName);
+//     alert(child.childNodes[3].nodeName);
+//     alert(child.childNodes[5].tagName);
+
+    alert(child.childNodes[5].nodeValue);
+    console.log(child.childNodes[3].firstChildNode);
+    // console.log(child.childNodes[3].childNodes[0].nodeName);
+    // console.log(child.childNodes[3].childNodes[0].nodeValue);
+    // console.log(child.childNodes[3].childNodes[0].nodeType);
+    // console.log(child.childNodes[1].nodeType);
+    // console.log(child.childNodes[7].nodeType);
+
+
+    // child.removeChild(child.firstElementChild)
+    // child.removeChild(child.childNodes[5]);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Default Parameters</title>
+</head>
+<body>
+    <script>
+/* 
+-Function
+Default Function Parameters
+Function Parameters Default [Undefined]
+Old Strategies [Condition + Logical Or]
+ES6 Method
+*/
+        function person(name,age=19){      //ES6
+            console.log(`${name}${age}`);
+        }
+        person("amine");
+//==========================================================================================        
+        // function person(name,age){    //old
+        //     // if(age===undefined){
+        //     //     age="19";
+        //     // }
+        //     age = age || "19";
+        //     console.log(`${name}${age}`);
+
+        // }
+        person("amine");
+//==========================================================================================        
+
+    </script>
+</body>
+</html>

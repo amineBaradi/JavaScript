@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+	 <title>JavaScript Gestion des événements avec DOM2</title>
+</head>
+<body >
+	<div>
+        <p>je suis un paragraphe sur la gestion <strong>de la propagation des événements</strong></p>
+    </div>
+    <a href="TouchClavier.html" >Cliquer ici</a>
+<script>
+  function charge()
+  {
+      let d=document.querySelector('div');
+      d.style.backgroundColor='yellow';
+      d.style.width='50%'
+      d.style.height='200px';
+      d.style.margin='auto'
+  }
+
+  window.addEventListener('load',charge);
+  let d=document.querySelector('div');
+  let p=document.querySelector('p');
+  let s=document.querySelector('strong');
+function bouill(){
+  d.addEventListener('click',function(){alert("je suis la DIV")});
+  p.addEventListener('click',function(e){alert("je suis le PARAGRAPHE"); e.stopPropagation();});
+  s.addEventListener('click',function(event){alert("je suis le STRONG"); event.stopPropagation()});
+  window.addEventListener('click',function(){alert("je suis le BODY")});
+}
+function capture(){
+  d.addEventListener('click',function(){alert("je suis la DIV")},true);
+  p.addEventListener('click',function(){alert("je suis le PARAGRAPHE")},true);
+  s.addEventListener('click',function(){alert("je suis le STRONG")},true);
+  window.addEventListener('click',function(){alert("je suis le BODY")},true);
+}
+bouill();
+//capture()
+
+let lien= document.links[0];
+lien.addEventListener('click',function(e){e.preventDefault();})
+</script>
+
+
+
+</body>
+
+</html>

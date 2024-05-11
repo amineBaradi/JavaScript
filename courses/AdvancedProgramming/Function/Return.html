@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Function Return And Use Cases</title>
+</head>
+<body>
+    <script>
+/*
+Function
+        Return
+        Aoutomatic Semicolon Insertion [No line Terminator Allowed]
+        Interruptting
+ */
+function Hello(userName){
+        return `Hello ${userName}`;  
+        };
+        //console.log(Hello("Amine"));
+        let results =  Hello("Amine") ;
+        console.log(results);
+//==========================================================================================
+function clac(num1, num2){
+        return num1 + num2;
+       // console.log("Rien");
+        };
+        let sm =clac(12,12);
+        console.log(sm);
+        console.log(sm + 10);
+//==========================================================================================
+        function  somme(a,b){
+        return a + b;
+    // لا ينفد شيء بعدها وتضع النتيجة في النفس السطر وليس في سطر اخر 
+};
+let result = somme(2,3);
+console.log(result + 5);
+//==========================================================================================
+function generateYears(start,end,exclude){
+        for(let i = start ;i<=end ; i++){
+        console.log(`Years  ${i}`);
+        if(i===2020){
+            return `Interrupting` ;
+        }
+        }
+        }
+        generateYears(2002,2023,2020);
+//==========================================================================================
+function premierMetent(start, end ,minute){
+                for( let i= start; i <=end;i++){
+                    if(i===minute){
+                        // console.log(i);
+                        return `Interrupting`; //كانك تقول له توقف عن الدقيقة التي حددتها له
+                        
+                    }
+                        // console.log(i);
+                        }
+                    }
+                        premierMetent(0,45.5,20);
+    </script>
+</body>
+</html>

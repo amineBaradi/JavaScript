@@ -1,0 +1,377 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM(BrowserObjectModel)</title>
+    <style>
+        body {
+            height: 5000px;
+            width: 5000px;
+        }
+        button {
+            background-color: red ;
+            border:none;
+            color: white;
+            font-weight: bold;
+            padding:6px;
+            border-radius:4px;
+            position:fixed;
+            bottom:20px;
+            right: 20px;
+            display:none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<div class="sec01">Section One</div>
+<div class="sec02">Section Two</div>
+<div>5</div>
+<button>Stop</button>
+<button>Up</button>
+<body>
+    <script>
+/*
+bom[browser object model]
+-Introduction
+--window object Is the browser window
+---window contain the document object
+---All Global Variables And Objects And Functions Are Members Of Window Object
+------Test Document And Console
+-What Can We Do With Window Object ?
+---Open Window
+---Close Window
+---Move Window
+---Resize Window
+---Print Document
+---Run Code After Period Of Time Once Or More
+---FUlly Control The URL
+---Save Data Inside Browser To Use Later
+*/
+// console.log( "amine");
+// window.console.log( "amine");
+window.document.title = "Hello Js";
+//==========================================================================================================================================
+/*
+BOM[Browser Object Model]
+-alert(Message) => Need No Response Only Ok Available
+-confirm(Message) => Need Response And Return A Boolean
+-prompt(Message,Default Message) => Collect Data
+*/
+// window.alert("Amine Mobile Developer");
+// this.alert("Amine Mobile Developer");
+alert("Amine Mobile Developer");
+console.log("Amine Mobile Developer");
+//========
+let confirmMsg = confirm("Are you Sure?");
+console.log("conirmMsg");
+if(conirmMsg===true){
+console.log("Item Deleted");
+}else{
+    console.log("Item Not Deleted");
+}
+//========
+let promptMsg =prompt("Good Day To you ","Write Day With three Char");
+console.log("promptMsg");
+//==========================================================================================================================================
+/*
+BOM[Browser Object Model]
+-setTimeout(Function ,Timeout,Additional Params)
+-clearTimeout(Identifier)
+*/
+// setTimeout(function (){
+//     console.log(`Msg`);
+// },3000);
+
+// setTimeout(sayMsg,3000);
+// function sayMsg(){
+//     console.log(`I'am Message`);
+// }
+
+// setTimeout(sayMsg,3000,"Amine",38);
+// function sayMsg(user,age){
+//     console.log(`I'am Message For ${user} His Age Is :${age}`);
+// }
+
+
+let counter = setTimeout(sayMsg,3000);
+function sayMsg(){
+    console.log(`I'am Message `);
+}
+// console.log(counter);
+let btn = document.querySelector("button");
+btn.onclick = function () {
+    clearTimeout(counter); //counter = 1
+};
+//==========================================================================================================================================
+/*
+BOM[Browser Object Model]
+-setInterval(Function ,Millseconds,Additional Params)
+-clearInterval(Identifier)
+*/ 
+// setInterval(function (){
+//     console.log(`Msg`);
+// },1000);
+
+// setInterval(sayMsg,3000);
+// function sayMsg(){
+//     console.log(`I'am Message`);
+// }
+
+// setInterval(sayMsg,3000,"Amine",38);
+// function sayMsg(user,age){
+//     console.log(`I'am Message For ${user} His Age Is :${age}`);
+// }
+
+
+let div = document.querySelector("div");
+function countdown(){
+    div.innerHTML -= 1 ;
+    if(div.innerHTML ==="0"){
+        clearInterval(counter1);
+    }
+}
+let counter1 = setTimeout(countdown,3000);
+//==========================================================================================================================================
+/*
+BOM [Browser Object Model]
+-location Object
+---href Get / Set [URL || Hash || File ||Mail]
+---host
+---hash
+---protocol
+---reload()
+---replace()
+---assign()
+*/ 
+
+// console.log(location);
+
+// console.log(location.href);
+
+// location.href="https://youtube.com";
+// location.href="/#sec02";
+//location.href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference";
+
+// console.log( location.host);
+// console.log( location.hostname);
+// location.hostname="facebook.com";
+
+//  console.log(location.protocol);
+// //  location.protocol="https";
+
+
+// console.log(location.hash);
+// console.log(location.reload);
+
+// console.log(location.replace);
+// location.replace("https://facebook.com");
+// console.log(location.assign);
+// location.assign("https://wikipedia.org");
+
+// // alert(location. href); // Display the current link
+// // if (confirm("Would you like to visit Wikipedia?")) {
+// // location.href = "https://wikipedia.org"; // redirect the browser to another link
+// // }
+//==========================================================================================================================================
+/*
+BOM[Browser Object Model]
+-open(URL [Opt],Window Name Or Target Attr [Opt],Win Features [Opt],History Rep)
+-close()
+-Window Features
+---width [Num]
+---height [Num]
+---left [Num]
+---top [Num]
+
+
+Search 
+-Window.Open Window Features
+*/ 
+setTimeout(function(){
+window.open("https://google.com","_self","width=400,height=400,left=200,top=100","");
+},2000)
+
+
+// setTimeout(function(){
+// window.open("http://google.com","_blanck","width=400,heigth=400");
+// },4000)
+// // window.close();
+//==========================================================================================================================================
+/*
+BOM[Browser Object Model]
+-History API
+---Properties
+--------Length
+---Method
+------back()
+------forward()
+------go(Delta) => Position In History
+
+Search [For Advanced Knowledge]
+-pushState() + replaceState()
+
+*/ 
+// console.log(history);
+// console.log(history.length);
+// console.log(history.back());
+// console.log(history.forward());
+// console.log(history.go(0));
+// console.log(history.go(1));
+// console.log(history.go(-1));
+// console.log(history.go(-2));
+
+
+//==========================================================================================================================================
+/*
+BOM[Browser Object Model]
+-stop()
+-print()
+-focus()
+-scrollTo(x,y || options)
+-scroll(x,y || options)
+-scrollBy(x,y || options)
+*/ 
+
+// console.log(stop);
+// console.log(print());
+
+
+// window.scrollBy(500,500);
+// console.log(window.scrollBy(500,200) );
+
+// window.scrollTo({
+//     left:500,
+//     top:200,
+//     behavior:"smooth"
+// });
+
+
+
+// let MyWindow=window.open("http://google.com","_self","width=400","heigth=400");
+// console.log(MyWindow.focus());
+// console.log(MyWindow.close());
+// window.scrollTo(500,500);
+// console.log(window.scrollTo(500,200) );
+//==========================================================================================================================================
+/*
+BOM[Browser Object Model]
+-Practice => Scroll To Top 
+-scrollX [Alias => PageXOffset]
+-scrollY [Alias => PageYOffset]
+
+*/ 
+console.log(windows.scrollX ===windows.pageXOffset);
+
+let btn = document.querySelector("button");
+window.onscroll = function () {
+if(windows.scrollY >= 6000){
+    btn.style.display = "block"
+    // console.log(`Scroling Y Value Is ${windows.scrollY}`);
+}else {
+    btn.style.display = "none"
+
+}
+
+};
+
+btn.onclick = function () {
+    window.scrollTo({
+        left:0,
+        top:0,
+        behavior:"smooth",
+    });
+};
+
+
+//==========================================================================================================================================
+/*
+BOM[Browser Object Model]
+Local Storage
+- setItem
+- getItem
+- removeItem
+- clear
+- Key
+
+Info
+- No Expiration Time
+- HTTP And HTTPS
+- Private Tab
+*/ 
+
+// Set
+// window.localStorage.setItem("color","green");
+// window.localStorage.fontWeight ="bold";
+// console.log(window.localStorage);
+// console.log(typeof window.localStorage);
+// window.localStorage['fontSize'] ='20px';
+//====== 
+// get
+// console.log(window.localStorage.getItem("color"));
+// console.log(window.localStorage.color);
+// console.log(window.localStorage['color']);
+//====== 
+// remove
+// window.localStorage.removeItem('color');
+
+// removeALL
+// window.localStorage.clear();
+
+//======= 
+// GET KEY
+// console.log(window.localStorage.key(0));
+
+//======= 
+// set color in page
+// document.body.style.backgroundColor=window.localStorage.getItem("color");
+
+//==========================================================================================================================================
+/*
+BOM [Browser Object Model]
+ Local Storage Color Application Practice
+
+
+*/ 
+
+
+
+
+// console.log(window.localStorage);
+// console.log( typeof window.localStorage);
+
+// window.localStorage.setItem("color","green");
+// window.sessionStorage.setItem("color","red");
+
+
+
+
+
+
+
+
+//==========================================================================================================================================
+
+// let div = document.querySelector('div');
+// function sub(){
+//     div.innerHTML -=1;
+//     if( div.innerHTML==='0'){
+//      clearInterval(cout);
+//     }
+// }
+// let cout =setInterval(sub,3000);
+// sub();
+// sub();
+// sub();
+// sub();
+// sub();
+    
+    
+    // let a=document.createElement("p")
+// console.log( a);
+// let b=window.document.createElement("p")
+// console.log( a);
+    </script>
+</body>
+</html>

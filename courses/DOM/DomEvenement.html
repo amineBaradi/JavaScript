@@ -1,0 +1,54 @@
+                                            <!--  الحدثchange-->
+<!-- يقع الحدث change عند تمام تغيّر العنصر.
+
+بالنسبة للمُدخلات النصّيّة،
+ذلك يعني أنّ الحدث يقع عندما تفقد التركيز.
+على سبيل المثال، عند الكتابة في الحقل النصيّ أدناه، لا يكون هناك أيّ حدث. لكن عندما ننقل التركيز إلى مكان آخر، 
+كالنقر على زرّ مثلا، سيكون لدينا الحدث change: -->
+<h1 style="background-color:red">Événement change</h1>
+<input type="text" onchange="alert(this.value)">
+<input type="button" value="Button"></input>
+<br><br>
+
+<!-- بالنسبة للعناصر الأخرى select وinput type=checkbox/radio
+، فإنّ الحدث يقع بعد تغيّر التحديد مباشرة:  -->
+
+  <select onchange="alert(this.value)">
+    <option value="">Select something</option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </select>
+
+<br><br>
+
+                                            <!-- الحدث: input -->
+<!-- 
+كلّما غيّر المستخدم القيمة التي في المُدخل. وبخلاف أحداث لوحة المفاتيح، 
+يقع هذا الحدث عند كلّ تغيّر في القيمة، حتى لو لم يكن ناجما عن أفعال لوحة المفاتيح،
+ كاللصق بواسطة الفأرة أو استعمال التعرّف على الصوت لإملاء النصّ. على سبيل المثال: -->
+ <h1 style="background-color:red">Événement input</h1>
+ <input type="text" id="input"> oninput: <span id="result"></span>
+<script>
+  input.oninput = function() {
+    result.innerHTML = input.value;
+  };
+</script>
+
+
+<br><br>
+
+                                            <!-- الأحداث: cut وcopy وpaste
+
+تقع هذه اﻷحداث عند قصّ/نسخ/لصق قيمة ما، وهي تنتمي إلى الصنف ClipboardEvent
+، وتُمكّن من الوصول إلى المُعطيات التي قُصّت/أُلصقت. يمكننا أيضا استخدام event.preventDefault() معها لإلغاء الفعل،
+ فلا يتمّ بذلك نسخ/لصق أيّ شيء. على سبيل المثال، تمنع الشيفرة أدناه وقوع أيّ من هذه اﻷحداث، 
+وتُظهر ماذا نحاول قصّه/نسخه/لصقه: -->
+<h1 style="background-color:red">Événement: cut وcopy وpaste</h1>
+<input type="text" id="input">
+<script>
+  input.oncut = input.oncopy = input.onpaste = function(event) {
+    alert(event.type + ' - ' + event.clipboardData.getData('text/plain'));
+    return false;
+  };
+</script>

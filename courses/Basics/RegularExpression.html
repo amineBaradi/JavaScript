@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expressions</title>  
+</head>
+<body>
+    <form id="register action="" method="get">
+    <input type="text" id="phone" name="the-phone" maxlength="15"/>
+    <input type="submit" value="Register"/>  
+    </form>
+
+    <script>
+    /*
+    Regular Expression
+    Email
+    Ip
+    Iphone
+    Url
+    */  
+// let str1 = '10 20 100 1000 5000';
+// let str2 = 'Os1 Os12 Os123 Os123Os Os12312Os123';
+
+
+
+//===============================================================================================
+// let invalidEmail = 'Osama@@@gmail...com';
+// let validEmail = 'Osama@gmail.com';
+
+
+
+
+//===============================================================================================
+// let ip = '192.168.2.1';  //IPv4
+
+
+
+//===============================================================================================
+// let url = 'elzero.org';
+// let url = 'elzero.org/';
+// let url = 'http://elzero.org/';
+// let url = 'http://.elzero.org/';
+// let url = 'http://www.elzero.org/';
+// let url = 'https://elzero.org/';
+// let url = 'https://www.elzero.org/';
+// let url = 'http://www.elzero.org/?facebookid=fdjfhdskjfhdsjkfh';
+
+
+
+
+
+
+
+
+
+
+
+//===============================================================================================
+/*
+Regular Expression
+
+Syntax 
+/pattern/modifier(s);
+new RegExp("pattern","modifier(s)")
+
+Modifiers => Flags
+i => case-insensitive
+g => global
+m => Multilines
+
+Search Methods
+-match(Pattern)
+
+
+matching == مطابقة  متلاتم  متجانس
+Pattern == نمط
+
+Match 
+---Matches A String Against a Regular Expression Pattern
+---Returns An Array With The Matches
+---Returns null If No Match Is Found.
+*/
+let myString = "Hello Elzero Web School I love elzero";
+let regex =/elzero/;   
+console.log(myString.match(regex));
+//=====
+let myString1 = "Hello Elzero Web School I love elzero";
+let regex1 =/elzero/i;
+console.log(myString.match(regex));  //Elzero
+//=====
+let myString2 = "Hello Elzero Web School I love elzero";
+let regex2 =/elzero/g;
+console.log(myString.match(regex)); //Elzero , elzero
+//=====
+let myString3 = "Hello Elzero Web School I love elzero";
+let regex3 =/elzero/ig;
+console.log(myString.match(regex));  //Elzero , elzero
+//=====
+let myString4 = "Hello Elzero Web School I love elzero";
+let regex4 =/elzero/ig;
+console.log(myString.match(regex));  //null
+//===============================================================================================
+/*
+Regular Expression
+Ranges
+
+--Part 1
+(X|Y) => X Or Y
+[0-9] => 0 To 9
+[^0-9] => Any Character Not 0 To 9
+Practice
+
+-Part 2
+[a-z]
+[^a-z]
+[A-Z]
+[^A-Z]
+[abc]
+[^abc]
+*/ 
+let tld = "Com Net Org Info Code Io";
+let tldRe = /(org|info|io)/i;
+console.log(tld.match(tldRe));
+//====
+let tld1 = "Com Net Org Info Code Io";
+let tldRe2 = /(org|info|io)/ig;
+console.log(tld.match(tldRe));
+//====
+let nums = "12345678910";
+let numsRe = /[0-9]/;
+console.log(nums.match(numsRe));
+//====
+let nums1 = "12345678910";
+let numsRe1 = /[0-2]/g;
+console.log(nums.match(numsRe));
+//==== ^ = Not
+let notNums = "12345678910";
+let notNsRe = /[^0-2]/g;
+console.log(notNums.match(notNsRe));
+//==== 
+let specialNums = "1!2@3#4$5%678910";
+let specialNumsRe = /[^0-9]/g;
+console.log(specialNums.match(specialNumsRe));
+//==== 
+let practice = "Os1 Os1Os Os2 Os2 Os8 Os80s";
+let practiceRe = /Os[5-9]Os/g;
+console.log(specialNums.match(practiceRe));
+//===============================================================================================
+let myString5 = "AaBbcdefG123!232%^&*";
+let atozSmall = /[a-z]/g;
+let NotAtozSmall = /[^a-z]/g;
+console.log(myString5.match(atozSmall));
+console.log(myString5.match(NotAtozSmall));
+//=======
+let myString6 = "AaBbcdefG123!232%^&*";
+let atozCaptel = /[A-Z]/g;
+let NotAtozCaptel = /[^A-Z]/g;
+console.log(myString66.match(NotAtozCaptel));
+//=======
+let aAndcAnde = /[ace]/g;
+console.log(myString6.match(aAndcAnde));
+let NotaAndcAnde = /[^ace]/g;
+console.log(myString6.match(NotaAndcAnde));
+
+let Alphabet = /(a-zA-Z)/g;
+console.log(myString6.match(Alphabet));
+
+let Alphabet1 = /(^a-zA-Z)/g;
+console.log(myString6.match(Alphabet1));
+
+let special = /(^a-z^A-Z0-9)/g;
+console.log(myString6.match(special));
+
+//===============================================================================================
+/*
+Regular Expression
+Character Classes
+.  =>  matches any character , except newline or other line terminators.
+\w =>  matches word characters .[a-z,A-Z,0-9 And Underscore]
+\W =>  matches Non Word characters
+\d =>  matches digits from 0 to 9
+\D =>  matches non-digit characters. 
+\s =>  matches whitespace character.
+\S =>  matches non whitespace character
+*/ 
+let email = 'O@@@g...com O@g.com O@g.net A@Y.com O-g.com o@s 1@1.com'
+let dot = /./g;
+let word = /\w/g;
+let Word = /\W/g;
+let valid = /\w@\w.(com|net)/g;
+
+console.log(email.match(dot));
+console.log(email.match(valid));
+
+//===============================================================================================
+/*
+Regular Expression
+Character Classes
+\b => matches at the beginning or end of a word.
+\B => matches NOT at the beginning/end of a word.
+
+Test Method
+patter.test(input)
+*/ 
+
+// let names ="Sayed 1Spam 2Spam 3Spam Spam4 Spam5 Osama Ahmed Aspamo";
+// let re = /spam/ig;
+// console.log(names.match(re));
+
+// let names ="Sayed 1Spam 2Spam 3Spam Spam4 Spam5 Osama Ahmed Aspamo";
+// let re = /\bspam/ig;
+// console.log(names.match(re));
+
+// let names ="Sayed 1Spam 2Spam 3Spam Spam4 Spam5 Osama Ahmed Aspamo";
+// let re = /spam\b/ig;
+// console.log(names.match(re));
+
+let names ="Sayed 1Spam 2Spam 3Spam Spam4 Spam5 Osama Ahmed Aspamo";
+let re = /(\bspam|spam\b)/ig;
+console.log(names.match(re));
+
+console.log(re.test(names));
+
+console.log(/(\bspam|spam\b)/ig.test("Osama"));
+console.log(/(\bspam|spam\b)/ig.test("1Spam"));
+console.log(/(\bspam|spam\b)/ig.test("Spam1"));
+//===============================================================================================
+/*
+Regular Expression
+
+Quantifiers
+n+  => One Or More
+n*  => zero Or More
+n?  => zero Or one
+*/ 
+
+// let mails = "o@nn.sa osama@gmail.com elzero@gmail.net osama@mail.ru"; //All Emails
+// let mailRe =  /\w@\w\w.sa/ig;
+// console.log(mails.match(mailRe));
+
+let mails = "o@nn.sa osama@gmail.com elzero@gmail.net osama@mail.ru"; //All Emails
+// let mailRe =  /\w+@\w+.(com|net)/ig;
+let mailRe =  /\w+@\w+.\w+/ig;
+console.log(mails.match(mailRe));
+
+
+//let nums = "0110 10 150 05120 0560 350 00" // 0 Numbers Or No 0
+// let numRe = /0\d0/ig;
+// let numRe = /0\d+0/ig;
+// let numRe = /0\d*0/ig;
+
+let urls = "https://google.com http://www.website.net web.com"; //http + https
+let urlsRe = /https?:\/\/(www.)?\w+.\w+/ig;
+console.log(urls.match(urlsRe));
+
+//===============================================================================================
+/*
+Regular Expression
+
+    Quantifiers
+    n{x}   =>Number of
+    n{x,y} => Range
+    n{x,}  => At least x
+*/ 
+let serials = "S100S S3000S SS0000S S950000S";
+
+console.log(serials.match(/S\d{3}S/ig)); //S[Three Number]S
+console.log(serials.match(/S\d{4,5}S/ig)); //S[Four Or Five Number]S
+console.log(serials.match(/S\d{4,}S/ig));//S[At least Four]S
+
+//===============================================================================================
+/*
+Regular Expression
+Quantifiers
+$ =>  End With Something
+^ =>  Start With Something 
+?= => Followed By Something
+?= => Not Followed By Something
+*/ 
+
+let myString = "We Love Programming";
+let names = "1OsamaZ 2AhmedZ 3Mohammed 4MoustafaZ 5GamalZ";
+
+
+console.log(/ing$/ig.test(myString));
+console.log(/lz$/ig.test(names));
+console.log(/^\w$/ig.test(myString));
+
+console.log(/^we$/ig.test(myString));
+console.log(/^2$/ig.test(myString));
+console.log(/^\d$/ig.test(myString));
+
+console.log(names.match(/\d\w{5}(?=Z)/ig));
+console.log(names.match(/\d\w{8}(?!Z)/ig));
+//===============================================================================================
+/*
+Regular Expression
+
+-Replace
+-replaceAll
+*/ 
+let txt = "We Love Programming And @ Because @ Is Amazing";
+console.log(txt.replace("@","JavaScript"));
+console.log(txt.replaceAll("@","JavaScript"));
+
+let re = /@/ig;
+console.log(txt.replace(re,"JavaScript"));
+console.log(txt.replace(/@/ig,"JavaScript"));
+
+//===============================================================================================
+/*Regular Expression
+- Input Form Validation Practice
+*/
+    document.getElementById("register").onsubmit = function () {
+    let phoneInput = document.getElementById("phone").value;
+    let phoneRe = /\(\d{4}\)s\d{3}-\d{4}/; // (1234) 567-8910
+    
+    let validationResult = phoneRe.test(phoneInput);
+    if(validationResult === false){
+    return false ;
+    }
+    return true ;
+    }    
+//===============================================================================================
+
+
+//===============================================================================================
+
+// let re1 = new RegExp("abc");
+//         let re2 = /abc/;
+//         console.log(re1,re2);
+
+
+//         let eighteenPlus = /eighteen\+/;
+//         console.log(eighteenPlus);
+
+
+        
+        // console.log(/[0123456789]/.test("in 1992"));
+        // → true
+        // console.log(/[0-9]/.test("in 1992"));
+        // → true
+
+
+
+        // let notBinary = /[^01]/;
+        // console.log(notBinary.test("1100100010100110"));
+        // → false
+        // console.log(notBinary.test("1100100010200110"));
+        // → true
+
+
+        // let dateTime1 = /\d\d-\d\d-\d\d\d\d \d\d:\d\d/;
+        // console.log(dateTime.test("01-30-2003 15:20"));
+        // // → true
+        // console.log(dateTime.test("30-jan-2003 15:20"));
+        // // → false
+
+        // إذا وضعنا إشارة الجمع +
+        //  بعد شيء ما في تعبير نمطي، فستشير إلى أنّ هذا العنصر قد يكرَّر أكثر من مرة، بالتالي تعني 
+        //  /\d+/ مطابقة محرف رقم أو أكثر.
+        // تحمل إشارة النجمة * معنى قريبًا من ذلك
+        // console.log(/'\d+'/.test("'123'"));
+        // // → true
+        // console.log(/'\d+'/.test("''"));
+        // // → false
+        // console.log(/'\d*'/.test("'123'"));
+        // // → true
+        // console.log(/'\d*'/.test("''"));
+        // // → true
+
+
+        // أما إذا جاءت علامة الاستفهام بعد محرف في نمط، فستجعل ذلك المحرف اختياريًا optional
+        // ، أي قد يحدث مرةً واحدةً أو لا يحدث.
+        // let neighbor = /neighbou?r/;
+        // console.log(neighbor.test("neighbour"));
+        // // → true
+        // console.log(neighbor.test("neighbor"));
+        // // → true
+
+
+        // نستخدم الأقواس المعقوصة إذا أردنا حدوث النمط عددًا معينًا من المرات، فإذا وضعنا {4}
+        //  بعد عنصر ما مثلًا، فسيجبره بالحدوث 4
+        //   مرات حصرًا، ومن الممكن تحديد المجال الذي يمكن للعنصر حدوثه فيه بكتابة 
+        //   {2,4} التي تشير إلى وجوب ظهور العنصر مرتين على الأقل، وأربع مرات على الأكثر.
+        // let dateTime = /\d{1,2}-\d{1,2}-\d{4} \d{1,2}:\d{2}/;
+        // console.log(dateTime.test("1-30-2003 8:45"));
+        // // → true
+
+
+
+        // التابع test
+        //  الذي إن مرَّرنا سلسلةً نصيةً إليه،
+        //   فسيُعيد قيمةً بوليانيةً تخبرنا هل تحتوي السلسلة على تطابق للنمط الذي في التعبير أم لا.
+        // console.log(/abc/.test("abcde"));
+        // // → true
+        // console.log(/abc/.test("abxde"));
+        // // → false
+
+        // let daw = 'amine@@@gmail....com';
+        // let dawN = 'amine@gmail.com';
+        // let url ='http://facebook.com';
+        // let ip ='126.30.10.10'; // IpV4
+
+
+        // let string = " haw are you amine Are you ok";
+        // // let regExp= /Are/igm;
+        // let regExp= /Aren/igm;
+        // console.log(string.match(regExp));
+
+
+        // let tld= " Com, Net, Ma ,Org ,Or,Og"
+        // let dlt=/(org|ma|com|or|og|net|)/ig
+        // console.log(tld.match(dlt));
+
+
+        // let nums = "12345678910";
+        // let numsR=/[0-9]/g;
+        // console.log(nums.match(numsR));
+
+
+        // let Notnums = "12345678910";
+        // let NotnumsR=/[^0-2]/g;
+        // let NotnumsR=/[0-2]^/g;
+        // let NotnumsR=/[0-2^]/g;
+        // let NotnumsR=/[0-^2]/g;
+        // let NotnumsR=/[^0-2]/g;
+        // let NotnumsR=/^[0-2]/g;
+        // console.log(Notnums.match(NotnumsR));
+
+
+        // let Specialenums = "1!2@3#45$6%78910";
+        // let SpecialenumsR=/[^0-9]/g;
+        // console.log(Specialenums.match(SpecialenumsR));
+
+
+        // let Practice = "Os1 Os1Os Os8 Os8Os   ";
+        // let PracticeR=/Os[5-9]Os/g;
+        // console.log( Practice.match(PracticeR));
+
+
+        // let myString = "AaBbCcDdEfG!123%^$*"
+        // // let smalleLL= /[a-z]/g;
+        // let smalleL= /[A-z]/g;
+        // let smalleLL= /[a-zA-Z]/g;
+        // // let smalleLL= /[^a-zA-Z]/g;
+        // // let smalleL= /[^A-Z]/g;
+        // // let smalle= /[a-Z]/g;         //ERROR
+        // console.log(myString.match(smalleLL));
+        // console.log(myString.match(smalleL));
+
+
+
+        // let email = 'o@@@g...com omine@g.com o@g.net A@Y.com o-g.com o@s.org 1@1.com'
+        // let dot =/./g;
+        // let word =/\w@\w.(com|net)/g;
+        // // let word =/\w+@\w.(com|net)/g;
+        // let word1 =/\W/g;
+        // let word2 =/\D/g;
+        // let word3 =/\d/g;
+        // let word4 =/\S/g;
+        // let word5 =/\s/g;
+
+        // console.log(email.match(dot));
+        // console.log(email.match(word));
+        // console.log(email.match(word1));
+        // console.log(email.match(word2));
+        // console.log(email.match(word3));
+        // console.log(email.match(word4));
+        // console.log(email.match(word5));
+
+
+
+        // let name ="Amine 1amir amir2 3amir 4amine amine5 spam aspamo";
+        // // let nom = /\Bamir/ig;
+        // // let nom1 = /amine\B/ig;
+        // // console.log(name.match(nom));
+        // // console.log(name.match(nom1));
+
+        // let nom = /\bamir/ig;
+        // let nom1 = /amine\b/ig;
+        // console.log(name.match(nom));
+        // console.log(name.match(nom1));
+
+
+
+        // let string = "We love programming";
+        // let names = "1AmineZ 2AmirZ 3HamidZ 4IbrahR 5moussR";
+        //     console.log(/ing$/ig.test(string));
+        //     console.log(/^We/ig.test(string));
+        //     console.log(names.match(/\d\w{5}(?=Z)/ig));
+        //     console.log(names.match(/\d\w{5}(?!Z)/ig));
+
+
+
+            // let txt = "We love Programing And @ Becouse @ Is Amazzing!"
+            // console.log(txt.replace("@","JavaScript"));
+            // console.log(txt.replaceAll("@","JavaScript"));
+    
+    </script>
+</body>
+</html>

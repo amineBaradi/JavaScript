@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Intro And Syntax</title>
+</head>
+<body>
+
+    <script>
+//==================================================================================================================================
+/*
+Promise Intro Syntax
+-Promise In Javascript Is Like Promise In Real Life
+-Promise Is Something That Will Happen In the Future
+-Promise Avoid Callback Hell
+-Promise Is The Object That Represent The Status Of An Asynchronous Operation And Its Resulting Value
+
+
+-Promise Status
+---Pending : Initial State
+---Fulfilled: Completed Successfully
+---Rejected:Failed
+
+Story
+-Once A Promise Has Been Called , It Will Start In A Pending State 
+-The Created Promise Will Eventually End In A Resolved State Or In A Rejected State
+-Calling The Callback Functions (Passed To Then And Catch) Upon Finishing.
+
+then
+---Takes 3 Optional Arguments [Callback For Success Or Failure]
+*/ 
+// const myPromise = new Promise((resolveFunction,rejectFunction)=>{
+// let connect = false ;
+// if(connect){
+//     resolveFunction("Connection Established");
+// }else{
+//     rejectFunction(Error("Connection Failed"));
+// }
+// }).then(
+//     (resolveValue) => console.log(`Good ${resolveValue}`),
+//     (rejectValue) => console.log(`Bad ${rejectValue}`)
+
+// );
+// console.log(myPromise);
+
+const myPromise = new Promise((resolveFunction,rejectFunction)=>{
+let connect = false ;
+if(connect){
+    resolveFunction("Connection Established");
+}else{
+    rejectFunction(Error("Connection Failed"));
+}
+});
+console.log(myPromise);
+
+let resolver = (resolveValue) => console.log(`Good $ {resolveValue}`);
+let rejecter = (rejectValue) => console.log(`Bad $ {rejectValue}`);
+
+myPromise.then(resolver,rejecter);
+
+// myPromise.then(
+// // (resolveValue) => console.log(`Good ${resolveValue}`),
+// (rejectValue) => console.log(`Bad ${rejectValue}`)
+// );
+// myPromise.then(
+// // (resolveValue) => console.log(`Good ${resolveValue}`),
+// (rejectValue) => console.log(`Bad ${rejectValue}`)
+// );
+//==================================================================================================================================
+/*
+Promise Training 
+
+We Will Go To The Meeting , Promise Me That We Will Find The 4 Employees
+.then(We Will Choose Two People)
+.then(We Will Test Them Then Get One Of Them)
+.catch(No One Came)
+
+Then => Promise Is Successfull Use The Resolved Data
+Catch => Promise Is Failed , Catch The Error
+Finally => Promise Successfull Or Failed Finally Do Something
+*/
+
+const myPromise = new Promise((resolveFunction,rejectFunction)=>{
+    let employees = ["Osama","Ahmed","Sayed","Mahmoud"];
+    if(employees.length ===4){
+        resolveFunction(employees);
+    }else{
+        rejectFunction(Error("Number Of Employees Is Not 4"))
+    }
+});
+
+myPromise.then(
+(resolveValue) => {
+    resolveValue.length =2;
+    return resolveValue;
+})
+.then(
+(resolveValue) => {
+    resolveValue.length =2;
+    return resolveValue;
+})
+.then(
+(resolveValue) => {
+    resolveValue.length =1;
+    return resolveValue;
+})
+.then(
+(resolveValue) => {
+    console.log(`The Choosen Employee Is ${resolveValue}`);
+}).catch((rejectedReason) => {
+    console.log(rejectedReason);
+}).finally(
+    console.log("The Operation Is Done ")
+);
+//==================================================================================================================================
+/*
+Promise And XHR
+*/
+
+const getData =  (apiLink) => {
+return  new Promise((resolve,reject) => {
+let myRequest = new XMLHttpRequest();
+myRequest.onload = function () {
+if (this.readyState === 4 && this.status === 200){
+    resolve(JSON.parse(this.responseText));
+    }else{
+        reject(Error("NoData Found"))
+    }
+};
+
+myRequest.open("GET",apiLink);
+myRequest.send();
+getData("// https://api.github.com/users/elzerowebschool/repos").then(
+    (result) => {
+    result.length = 10 ;
+    return result;
+}).then((result)=> console.log(result[0].name)).catch((rej)=>console.log(rej));  
+
+
+// let jsData = JSON.parse(this.responseText);
+//     for(let i = 0 ; i< jsData.length;i++){
+//         let div = document.createElement("div");
+//         let repoName = document.createTextNode(jsData[i].name);
+//         div.appendChild(repoName);
+//         document.body.appendChild(div);
+//     }
+
+//==================================================================================================================================
+/*
+Promise
+-All
+-All Settled
+-Race
+*/
+const myFirstPromise = new Promise((res,rej)=>{
+    setTimeout(()=>{
+res("I'am The First Promise")
+    },5000);
+})
+const mySecondPromise = new Promise((res,rej)=>{
+    setTimeout(()=>{
+res("I'am The Second Promise")
+    },1000);
+})
+const myThirdPromise = new Promise((res,rej)=>{
+    setTimeout(()=>{
+rej("I'am The Third Promise")
+    },2000);
+})
+
+Promise.all([myFirstPromise,mySecondPromise,myThirdPromise]).then(
+    (resolvedValues)=> console.log(resolvedValues)
+    (rejectedValues) => console.log(`Rejected:${rejectedValues}`)
+);
+
+Promise.allSettled([myFirstPromise,mySecondPromise,myThirdPromise]).then(
+    (resolvedValues)=> console.log(resolvedValues)
+    (rejectedValues) => console.log(`Rejected:${rejectedValues}`)
+);
+
+Promise.rece([myFirstPromise,mySecondPromise,myThirdPromise]).then(
+    (resolvedValues)=> console.log(resolvedValues)
+    (rejectedValues) => console.log(`Rejected:${rejectedValues}`)
+);
+
+//==================================================================================================================================
+/*
+Async
+-Async Before Function Mean This Function Return A Promise
+-Async And Await Help In Creating Asynchronous Promise Behavior With Cleaner Style
+*/ 
+// function getData(){
+//     return new Promise((res,rej)=>{
+//     let users = ["Amine"];
+//     if(users.length > 0) {
+//         res("Users Found");
+//     } else {
+//         rej("No Users Found")
+//     }
+//     })
+// }
+// getData().then(
+//     (resolvedValue) => console.log(resolvedValue)
+//     (rejectedValue) => console.log("Rejected"+rejectedValue)
+
+// );
+// =============
+
+// function getData(){
+//     let users = [];
+//     if(users.length > 0) {
+//         return Promise.resolve("Users Found")
+//     } else {
+//         return Promise.reject("No Users Found")
+//     }}
+// getData().then(
+//     (resolvedValue) => console.log(resolvedValue)
+//     (rejectedValue) => console.log("Rejected"+rejectedValue)
+
+// );
+
+// =============
+async function getData(){
+    let users = [];
+    if(users.length > 0) {
+        return ("Users Found")
+    } else {
+    throw new Error("No Users Found")
+    }}
+    console.log(getData);
+getData().then(
+    (resolvedValue) => console.log(resolvedValue)
+    (rejectedValue) => console.log("Rejected"+rejectedValue)
+
+);
+
+//==================================================================================================================================
+/*
+-Await Works Only Inside Async Functions
+-Await Make JavaScript Wait For The Promise Result
+-Await Is More Elegant Syntax Of Getting Promise Result
+*/ 
+
+const myPromise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+    resolve("I'am The Good Promise")
+    reject(Error("I'am The Bad Promise"))
+    },3000);
+});
+async function readData(){
+    console.log("Before Promise");
+    // myPromise.then((resolvedValue)=>console.log(resolvedValue));
+    // console.log(await myPromise.catch((err)=>err));
+    console.log(await myPromise);
+    console.log("After Promise");
+}
+readData();
+//==================================================================================================================================
+
+// var p = new Promise(function(resolve, reject) {
+// ...القيام بمهمة غير متزامنة وثم
+// let conn="amine";
+// if( conn/* شرط جيد */) {
+//     resolve('Success!');
+// }
+// else {
+//     reject('Failure!');
+// }
+// });
+
+// p.then(function(result) {
+//     console.log('good'); 
+// /* القيام بفعل ما مع النتيجة */
+// })
+// .catch(function() {
+// console.log('bad');
+// /* خطأ :( */
+// })
+// .finally(function() {
+// /* تنفّذ بغض النظر عن النجاح أو الفشل */ 
+// console.log("très facile");
+// });
+// console.log(p);
+
+
+//==================================================================================================================================
+
+//  new Promise(function(resolve, reject) {
+//     // setTimeout حدث زائف غير متزامن باستخدام 
+//     setTimeout(()=> {
+//          resolve(10); }, 3000);
+// })
+// .then(function(num) {
+//     console.log(num);
+// });
+ 
+// console من الطرفية 
+// 10
+// console.log(n);
+//==================================================================================================================================
+
+// new Promise(function(resolve, reject) { 
+//     // setTimeout حدث زائف غير متزامن باستخدام 
+//     setTimeout(function() { resolve(10); }, 3000);
+// })
+// .then(function(num) { console.log('first then: ', num);
+//  return num * 2; })
+// .then(function(num) { console.log('second then: ', num); 
+// return num * 2; })
+// .then(function(num) { console.log('last then: ', num);});
+// // من الـ console                                   //كل then تستقبل القيمة المعادة من استدعاء then السابق.
+// first then:  10
+// second then:  20
+// last then:  40
+
+//==================================================================================================================================
+
+//يتم استدعاء رد النداء catch عندما يُرفض الوعد:
+// new Promise(function(resolve, reject) {
+//     // setTimeout حدث زائف غير متزامن باستخدام 
+//     setTimeout(function() { reject('Done!'); }, 3000);
+// })
+// .then(function(e) { console.log('done', e); })
+// .catch(function(e) { console.log('catch: ', e); });
+// .catch.reject(Error('Data could not be found'));
+// console من الطرفية 
+// 'catch: Done!'
+
+//رد النداء المعرّف حديثًا finally يتم استدعاؤه بغض النظر عن النجاح أو الفشل:
+// (new Promise((resolve, reject) => { reject("Nope"); }))
+//     .then(() => { console.log("success") })
+//     .catch(() => { console.log("fail") })
+//     .finally(res => { console.log("finally") });
+
+// >> fail
+// >> finally
+
+
+//==================================================================================================================================
+
+// تعدّ الدالة Promise.race
+//  مفيدة فبدلًا من أن يتم الانتظار حتى إنهاء جميع الوعود أو رفضها تقوم بتشغيل أيّ وعد في المصفوفة تم إنهاؤه أو رفضه.
+
+// var req1 = new Promise(function(resolve, reject) { 
+//     // setTimeout حدث زائف غير متزامن باستخدام 
+//     setTimeout(function() { resolve('First!'); }, 8000);
+// });
+// var req2 = new Promise(function(resolve, reject) { 
+//     // setTimeout حدث زائف غير متزامن باستخدام 
+//     setTimeout(function() { resolve('Second!'); }, 3000);
+// });
+// Promise.race([req1, req2]).then(function(one) {
+//     console.log('Then: ', one);
+// }).catch(function(one, two) {
+//     console.log('Catch: ', one);
+// });
+
+// console من الـ 
+// Then: Second!
+
+
+
+
+
+//==================================================================================================================================
+
+// // من وعود جاك أرشيبالد والعودة
+// // http://www.html5rocks.com/en/tutorials/es6/promises/#toc-promisifying-xmlhttprequest
+// function get(url) {
+//   //إعادة وعد جديد.
+//   return new Promise(function(resolve, reject) {
+//     // XHR القيام بالعمل الاعتيادي لـ
+//     var req = new XMLHttpRequest();
+//     req.open('GET', url);
+//     req.onload = function() {
+//       // هذا يتم استدعاؤه حتى في حالة 404
+//       // لذا اختبر الحالة
+//       if (req.status == 200) {
+//         // قم بإنهاء الوعد مع نص الرد
+//         resolve(req.response);
+//       }
+//       else {
+//         // وإلا ارفض مع نص الحالة
+//         // والذي نأمل أن يكون خطأ ذو معنى
+//         reject(Error(req.statusText));
+//       }
+//     };
+//     // معالجة أخطاء الشبكة
+//     req.onerror = function() {
+//       reject(Error("Network Error"));
+//     };
+//     // القيام بالطلب
+//     req.send();
+//   });
+// }
+// // استخدمه!
+// get('story.json').then(function(response) {
+//   console.log("Success!", response);
+// }, function(error) {
+// console.error("Failed!", error);
+// });
+
+
+
+
+
+//==================================================================================================================================
+
+//  تُعيد الدالة وعدًا دومًا.
+// async function f() {
+//   return Promise.resolve(1);
+// }f().then(alert); // 1
+
+//==================================================================================================================================
+
+// async function f() {
+// let promise = new Promise((resolve, reject) => {
+//   setTimeout(() => resolve("done!"), 9000) // تم! 
+// });
+// let result = await promise; // ننتظر ... الوعد (*)
+// alert(result); // "done!" تم! 
+// }
+// f();
+
+
+
+//==================================================================================================================================
+
+// async function showAvatar() {
+//   // إقرأ ملفات JSON
+//   let response = await fetch('/article/promise-chaining/user.json');
+//   let user = await response.json();
+//   //  إقرأ مستخدم github
+//   let githubResponse = await fetch(`https://api.github.com/users/${user.name}`);
+//   let githubUser = await githubResponse.json();
+//   //  أظهرالصورة الرمزية avatar
+//   let img = document.createElement('img');
+//   img.src = githubUser.avatar_url;
+//   img.className = "promise-avatar-example";
+//   document.body.append(img);
+//   // انتظر  3 ثواني
+//   await new Promise((resolve, reject) => setTimeout(resolve, 3000));
+//   img.remove();
+//   return githubUser;
+// }
+// showAvatar();
+    </script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+<!-- 
+    StringMethods
+    Access With Index
+    Access With charAt()
+    length
+    trim()
+    toUpperCase()
+    toLowerCase()
+    chainMethods
+-->
+<!-- 
+    indexOf(Value[requir],Start[Opt]0)
+    LastIndexOf(Value[requir],Start[Opt]length)
+    Slice(Start[requir],end[opt]Not Include End)
+    Repeat(times)[ES6]
+    split(separators[Opt],Limit[Opt])
+-->
+<!-- 
+subString(Start[requir],End[Opt]Not Including End)
+---Start > End Will Swap
+---Start < 0 It Start From 0
+---Use Length To Get Last Character
+---Substr(Start [Mand],Characters To Extract)
+---Start >= Length = ""
+---Negative Start From End
+---includes(Value [Mand],Start [Opt] Default 0) [ES6]
+---startsWith(Value [Mand],Start [Opt] Default 0) [ES6]
+---endsWith(Value [Mand],Length [Opt] Default Full Length) [ES6]
+
+---
+
+-->
+<body>
+    <script>
+
+let theName="amine  ";
+let theList=[1,2,3,4,5];
+
+console.log(theName);
+console.log(theName[1]);
+
+console.log(theName[3]); //n
+console.log(theName.charAt(3)); //n  //تُعيد سلسلةً نصيةً جديدةً التي تساوي قيمتها قيمة محرف يونيكود الموجود في الفهرس المُحدَّد في السلسلة النصية.
+
+console.log(theName.charAt(5)); //rien
+console.log(theName[5]); //rien
+
+console.log(theName.length); //element indexing starts from 0, while length numbering starts from 1.
+
+console.log(theName.trim());           // تزيل المسافات   تُزيل الفراغات من بداية ونهاية السلسلة النصية
+
+console.log(theName.length);
+
+//chainMethods
+console.log(theName.trim().charAt(3).toLocaleLowerCase());
+
+let a ="I Love My Names";
+console.log(a.substring(2,6));  //تُعيد سلسلةً نصيةً فرعيةً من سلسلةٍ نصيةٍ أخرى والتي تقع بين فهرسين.
+console.log(a.substring(6,2));
+
+console.log(a.substring(-10,6));  //0-6
+console.log(a.substr(0));    //تُعيد عددًا معيّنًا من المحارف بدءًا من الموضع المُحدَّد.
+
+console.log(a.length);
+console.log(a.substring(a.length-5,6));
+
+console.log(a.includes("My"));  //تُحدِّد إن كانت تحتوي سلسلةٌ نصيةٌ على سلسلةٍ نصيةٍ أخرى، وتُعيد القيمة true أو false.
+console.log(a.includes("My",5));
+
+console.log(a.startsWith("I"));   //تُحدِّد إن كانت تبدأ سلسلةٌ نصيةٌ بمحارف سلسلةٍ نصيةٍ أخرى، وتُعيد القيمة true أو false.
+console.log(a.startsWith("I",7));
+console.log(a.startsWith("My",7));
+console.log(a.endsWith("es",12));   //تُحدِّد إن كانت تنتهي سلسلةٌ نصيةٌ بمحارف سلسلةٍ نصيةٍ أخرى، وتُعيد القيمة true أو false.
+console.log(a.endsWith("es"));
+
+//========================================================================================================
+a = " my names is amine baradi ";  //-1 إن  لم يُعثَر عليها يرجع.
+console.log(a.indexOf("is",11));
+
+a = " my names is amine baradi ";   
+console.log(a.indexOf("is"));
+
+a = " my names is amine baradi ";   
+console.log(a.indexOf("amine",11,26));
+console.log(a.length);
+
+
+a = "myNamesIsAmineBaradi";   
+console.log(a.lastIndexOf("m"));
+
+a = "myNamesIsAmineBaradi";   
+console.log(a.indexOf("m"));
+
+
+console.log(a.slice(0,5));   //تستخرج قسمًا من السلسلة النصية وتُعيده كسلسلة نصية جديدة. str.slice(beginIndex[, endIndex])
+console.log(a.slice(0));
+console.log(a.slice(-3));  
+
+console.log(a.repeat(4));
+console.log(a.replace("amine is good"));
+console.log(a.split("",3));  //تقسم كائن String إلى مصفوفة من السلاسل النصية بفصلها إلى سلاسل نصية فرعية، وذلك باستخدام محرف فصل مُعيّن لمعرفة أين سيكون كل قسم.
+//========================================================================================================
+let str = "Amine Mobile Developer";
+
+console.log(str.substring(0,6));
+console.log(str.substring(6,2));  //Swap
+console.log(str.substring(-10));
+console.log(str.substring(-10,6));  //0  =>  6
+
+console.log(str.substring(16))
+console.log(str.substring(str.length - 1));
+console.log(str.substring(str.length - 1,str.length - 3));
+console.log(str.length - 1);
+
+console.log(str.substr(0,6));
+console.log(str.substr(23));
+console.log(str.substr(-3));
+console.log(str.substr(-3 , 2));
+
+
+
+console.log(str.includes("Amine"));
+console.log(str.includes(11,"Amine"));
+console.log(str.includes("Amine",11));
+
+console.log(str.startsWith("A"));
+console.log(str.startsWith("A",23));
+
+console.log(endsWith("e",6));
+
+//========================================================================================================
+
+// //methode string
+// console.log('alphabet'.toUpperCase()); // 'ALPHABET'//لتحويل جميع الاحرف الى الاحرف الكبيرة
+// console.log('ALPHABET'.toLowerCase()); // 'alphabet'لتحويل جميع الاحرف الى الاحرف الصغيرة
+
+
+
+// var hello = 'Hello, ';
+// console.log(hello.concat('Ahmed', '. Have a nice day.')); //لدمج 2 متغيرين من نوع النص مع بعض 
+// /* Hello, Ahmed. Have a nice day. */
+// var greetList = ['Hello', ' ', 'Amr', '!'];
+// "".concat(...greetList); // "Hello Amr!"
+// "".concat({}); // [object Object]
+// "".concat([]); /// ""
+// "".concat(null); // "null"
+// "".concat(true); // "true"
+// "".concat(4, 5); // "45"
+// "".concat({}); // [object Object]
+
+
+// var orig = '   foo  ';
+// console.log(orig.trim()); // 'foo'//لحدف الفراغات في البداية والنهاية القيمة المتغير 
+// // مثال آخر عن سلسلة نصية فيها فراغات من جهة واحدة فقط
+// var orig = 'foo    ';
+// console.log(orig.trim()); // 'foo'
+
+
+
+// var anyString = 'Brave new world';
+// console.log("The character at index 0   is '" + anyString.charAt()   + "'"); 
+// // لم يوفّر فهرس للدالة، لذا سيُستخدَم الفهرس 0
+// console.log("The character at index 0   is '" + anyString.charAt(0)   + "'");
+// console.log("The character at index 1   is '" + anyString.charAt(1)   + "'");
+// console.log("The character at index 2   is '" + anyString.charAt(2)   + "'");
+// console.log("The character at index 3   is '" + anyString.charAt(3)   + "'");
+// console.log("The character at index 4   is '" + anyString.charAt(4)   + "'");
+// console.log("The character at index 999 is '" + anyString.charAt(999) + "'");
+
+
+
+
+// var x = 'Hsoub';
+// var y = "حسوب";
+// var empty = '';
+
+// console.log('Hsoub is ' + x.length + ' code units long');//تشير الى طول السلسلة النصية ودلك بعد عدد رموز UTF-16
+// // "Hsoub is 5 code units long"
+// console.log('حسوب is ' + y.length + ' code units long');
+// // "حسوب is 4 code units long"
+
+// console.log('The empty string has a length of ' + empty.length);
+
+
+
+// var anyString = 'Brave new world';
+// console.log('The index of the first w from the beginning is ' + anyString.indexOf('w'));
+// // 8
+// console.log('The index of the last w from the beginning is ' + anyString.lastIndexOf('w'));
+// // 10
+// console.log('The index of "new" from the beginning is ' + anyString.indexOf('new'));
+// // 6
+// console.log('The index of "new" from the end is ' + anyString.lastIndexOf('new'));
+// // 6
+
+
+
+// var str = "hey JudE";
+// var re = /[A-Z]/g;
+// var re2 = /[.]/g;
+// console.log(str.search(re)); // القيمة 4، لأنها فهرس أوّل حرف كبير
+// console.log(str.search(re2)); // القيمة -1 لعدم وجود نقطة في السلسلة النصية
+
+
+
+// var str = 'It was the night before BD...';
+// var newstr = str.replace(/bd/i, 'Birthday');
+// console.log(newstr);  // It was the night before Birthday...
+
+// var re = /apples/gi;
+// var str = 'Apples are round, and apples are juicy.';
+// var newstr = str.replace(re, 'oranges');
+// console.log(newstr);  // oranges are round, and oranges are juicy.
+
+// var re = /(\w+)\s(\w+)/;
+// var str = 'John Smith';
+// var newstr = str.replace(re, '$2, $1');
+// console.log(newstr);  // Smith, John
+
+
+
+// var anyString = 'Hsoub';
+
+// // 'Hso'
+// console.log(anyString.substring(0, 3));
+// console.log(anyString.substring(3, 0));
+
+// // 'b'
+// console.log(anyString.substring(4, 5));
+// console.log(anyString.substring(4));
+// console.log(anyString.substring(5, 4));
+
+// // 'Hsou'
+// console.log(anyString.substring(0, 4));
+
+// // 'Hsoub'
+// console.log(anyString.substring(0, 5));
+// console.log(anyString.substring(0, 10));
+
+
+// // عرض آخر محرفين
+// var anyString = 'Hsoub';
+// var anyString4 = anyString.substring(anyString.length - 2);
+// console.log(anyString4); // 'ub'
+
+// // عرض آخر 3 محارف
+// var anyString = 'Hsoub';
+// var anyString5 = anyString.substring(anyString.length - 3);
+// console.log(anyString5); // 'oub'
+
+
+    </script>
+</body>
+</html>

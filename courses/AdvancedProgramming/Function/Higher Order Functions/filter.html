@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Higher Order Functions - Filter</title>
+</head>
+<body>
+    <script>
+/*
+---Filter 
+---method creates a new array
+---with all elements that pass the test implemented by the provided function.
+
+
+
+Syntax filter(callBackFunction(Element,Index,Array){},thisArg)
+-Element => The current element being processed in the array.
+Index => Yhe index of the current element being processes in the array.
+-Array => The Current Array
+
+
+-Filter Word More Than 4 Characters
+*/
+//==================================================================================================
+//Get Friends With Name Starts With A
+let friends = ["Ahmed","Sameh","Sayed","Amine","Amgad","Israa"];
+// let filterFriends = friends.filter(function (el){
+// return el.startsWith("A") ? true : false;
+// });
+console.log(filterFriends);
+//Get Even Numbers Only
+let numbers = [11,20,2,5,17,10];
+//===========
+let evenNumbers = numbers.filter(function (el){
+return el % 2 ===0 ;
+});
+console.log(evenNumbers);
+
+//Test Map vs Filter
+
+// let addMap = numbers.map(function(el) {
+//     return el + el;
+// });
+// console.log(addMap);
+
+// let addFilter = numbers.filter(function(el) {
+//     return el + el;
+// });
+// console.log(addFilter);
+//===========
+let filterFriends = friends.filter(function (el){
+return el.startsWith("A");
+});
+console.log(filterFriends);
+//==================================================================================================
+//Filter Wirds More Than 4 Characters
+let sentence = "I Love Foood Code Too Playing Much";
+let smallWords = sentence.split(" ").filter(function(ele){
+    return ele.length <= 4 ;
+}).join(" ");
+console.log(smallWords);
+//================================
+//Ignore Numbers
+let ign = ignoreNumbers
+.split("")
+.filter(function(ele){
+    return isNaN(parseInt(ele)) ? ele : "";
+})
+.join("");
+console.log(ign);
+//================================
+//Ignore Numbers
+let ign1 = ignoreNumbers
+.split("")
+.map(function(ele){
+    return isNaN(parseInt(ele));
+})
+.join("");
+console.log(ign1);
+//==================================================================================================
+var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter(word => word.length < 6);
+console.log(result); // ["exuberant", "destruction", "
+//==================================================================================================
+// let lesfriends=["AMINE","amine","amir","AMIR"];
+// let friend =lesfriends.filter(function(element){
+//     return element.startsWith("a") ? true :false;
+// })
+// console.log(friend);
+//==================================================================================================
+
+// let numbers =[2,11,4,9,6,5];
+// let num =numbers.filter(function(element){
+//     return element % 2===0 ? true : false
+// });
+// console.log(num);
+//==================================================================================================
+// let alpha = "Ami2002Ne";
+// let alphabie =alpha.split("").filter(function(element){
+//     return isNaN(parseInt(element)) ? element :"";
+// }).join("");
+// console.log(alphabie);
+//==================================================================================================
+
+let mix= "A13BS2ZX";
+let mi=mix.split("").filter(function(element){
+    return  !isNaN(parseInt(element)) ;
+})
+        .map(function(element){
+        return element * element;
+    })
+    .join("");
+console.log(mi);
+
+</script> 
+</body>
+</html>

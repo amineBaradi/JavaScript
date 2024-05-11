@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+	 <title>JavaScript Gestion des événements avec DOM2</title>
+</head>
+<body >
+	<div></div>
+<script>
+  function charge()
+  {
+      let d=document.querySelector('div');
+      d.style.backgroundColor='yellow';
+      d.style.width='50%'
+      d.style.height='200px';
+      d.style.margin='auto'
+  }
+
+  window.addEventListener('load',charge);
+window.addEventListener('keypress',function(e){couleur(e);})
+  function couleur(obj)
+  {
+      let d=document.querySelector('div');
+    let touch=obj.key;
+      let touchMaj=touch.toUpperCase();
+      if(touchMaj=="V")
+      d.style.backgroundColor='green';
+      else if(touchMaj=='O')
+      d.style.backgroundColor="orange"
+      else if(touchMaj=='R','entrer',2)
+      d.style.backgroundColor='red'
+      else
+      {
+          alert("touche "+touch+" non gérée");
+          d.style.backgroundColor="yellow"
+      }
+
+
+  }
+
+
+</script>
+
+
+
+</body>
+
+</html>

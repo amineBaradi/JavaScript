@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boolean</title>
+</head>
+<body>
+    <script>
+        //إنشاء كائنات Boolean لها القيمة الابتدائية false
+var bNoParam = new Boolean();
+var bZero = new Boolean(0);
+var bNull = new Boolean(null);
+var bEmptyString = new Boolean('');
+var bfalse = new Boolean(false);
+console.log(bNoParam);
+console.log(bZero);
+console.log(bNull);
+console.log(bEmptyString);
+console.log(bfalse);
+
+
+
+
+
+
+
+
+//إنشاء كائنات Boolean لها القيمة الابتدائية true
+var btrue = new Boolean(true);
+var btrueString = new Boolean('true');
+var bfalseString = new Boolean('false');
+var bHsoub = new Boolean('Hsoub');
+var bArrayProto = new Boolean([]);
+var bObjProto = new Boolean({});
+console.log(bfalseString );
+
+// هذا مثال عن استخدام الدالة toString لإسناد التمثيل النصي للكائن flag إلى المتغير myVar، لاحظ أنَّ التمثيل النصي لهذا الكائن هو "true":
+var flag = new Boolean(true);
+var myVar = flag.toString(); // "true"
+console.log(flag);
+console.log(myVar);
+
+
+
+
+// هذا مثالٌ آخر عن التمثيل النصي لكائن Boolean قيمته هي false:
+console.log(new Boolean().toString());
+
+
+// هذا مثال عن استخدام الدالة valueOf
+//  لإسناد القيمة الأولية للكائن x إلى المتغير myVar، لاحظ أنَّ القيمة الأوليّة لهذا الكائن هي false:
+x = new Boolean();
+myVar = x.valueOf(); // false
+    </script>
+</body>
+</html>

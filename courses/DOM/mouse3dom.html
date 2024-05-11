@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <script>
+         
+         ball.onmousedown = function(event) { 
+  // (1) z-index تجهّز للتحريك: اجعل وضعيّة الكرة مطلقة وفي الأعلى بواسطة
+  ball.style.position = 'absolute';
+  ball.style.zIndex = 1000;
+
+  // مباشرة body افصلها عن أيّ آباءٍ لها وألحقها بـ
+  // body اجعلها متموضعة بالنسبة لـ
+  document.body.append(ball);  
+
+  // (pageX, pageY) مركِز الكرةَ في الإحداثيّات
+  function moveAt(pageX, pageY) {
+    ball.style.left = pageX - ball.offsetWidth / 2 + 'px';
+    ball.style.top = pageY - ball.offsetHeight / 2 + 'px';
+  }
+
+  // حرّك الكرة المطلقة التموضع أسفل المؤشّر
+  moveAt(event.pageX, event.pageY);
+
+  function onMouseMove(event) {
+    moveAt(event.pageX, event.pageY);
+  }
+
+  // (2) mousemove حرّك الكرة عند
+  document.addEventListener('mousemove', onMouseMove);
+
+  // (3) أفلت الكرة وأزل المعالجات غير المرغوبة
+  ball.onmouseup = function() {
+    document.removeEventListener('mousemove', onMouseMove);
+    ball.onmouseup = null;
+  };
+
+};
+     </script>
+     <!-- ball.ondragstart = function() {
+        return false;
+      }; -->
+ </body>
+ </html>

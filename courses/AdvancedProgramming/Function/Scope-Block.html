@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope - Block</title>
+</head>
+<body>
+    <script>
+        /*
+        function
+        Scope - Block[if , switch ,for]   Block of Code 
+        */ 
+        var x=10;  //var is Not Block Scope
+        if(10===10){
+        var x =50;                               //var ليس Block-Scope
+        }
+        console.log(x); //50
+//==================================================================================================================
+        var x = 10;
+        if(10===10){
+        let x = 50; 
+        console.log(`From If Block ${x}`);
+        }
+        console.log(`From Global ${x}`);
+//==================================================================================================================
+        //Const
+        let x = 10;
+        if(10===10){
+        let x = 50;
+        }
+        console.log(` ${x}`);
+    </script>
+</body>
+</html>

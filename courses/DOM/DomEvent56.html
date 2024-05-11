@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Events</title>
+</head>
+<body>
+  <p></p>
+  <script>
+    // تمرير حدث إلى مستمع
+document.addEventListener('keydown', event => {
+    var element = document.querySelector('p');
+
+    // إسناد قيمة رموز المفاتيح المراد الضغط عليها إلى متغيرات
+    var a = 'KeyA';
+    var s = 'KeyS';
+    var d = 'KeyD';
+    var w = 'KeyW';
+
+    // تحديد الاتجاه لكل مفتاح
+    switch (event.code) {
+        case a:
+            element.textContent = 'Left';
+            break;
+        case s:
+            element.textContent = 'Down';
+            break;
+        case d:
+            element.textContent = 'Right';
+            break;
+        case w:
+            element.textContent = 'Up';
+            break;
+    }
+});
+  </script>
+</body>
+</html>

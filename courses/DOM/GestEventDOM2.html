@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+	 <title>JavaScript Gestion des événements avec DOM2</title>
+
+    </head>
+<body>
+	    <h2>Gestion des événements avec DOM0</h2>
+        <p >premier paragraphe</p>
+        <p >Deuxième paragraphe</p>
+        <p>Troisième paragraphe</p>
+        <button>Affiche Date</button>
+        <button>Modif style P3</button>
+        <button>Modifier style h2</button>
+        <button id="annul">Annul Style</button>
+        <button id="sup">Suuprimer Gest evenement</button>
+	<script>
+       
+  /*     let t2=document.querySelector('h2');
+    t2.addEventListener('click',function(){alert('Bonjour')})
+    t2.addEventListener('click',function(){this.style.color='blue'})
+    t2.addEventListener('click',function(){alert('au revoir')})
+    
+   
+    
+    
+    btns=document.getElementsByTagName('button');
+    let paras=document.getElementsByTagName('p');
+    btns[0].addEventListener('click',
+    function(){paras[0].textContent=Date();})
+
+    btns[0].addEventListener('mouseenter',
+function(){paras[0].style.color='red'})
+
+btns[0].addEventListener('mouseleave',
+function(){paras[0].removeAttribute('style')})
+
+  btns[1].addEventListener("click",modifStyleP3);
+
+  sup.addEventListener("click",function()
+  {btns[1].removeEventListener("click",modifStyleP3)})
+
+  annul.addEventListener("click",function(){paras[2].removeAttribute("style")})
+    
+  btns[2].addEventListener("click",function(){modifStyle(t2)})
+function modifStyleP3()
+        {
+             let P3=paras[2];
+         P3.textContent=P3.textContent.toLocaleUpperCase();
+         P3.style.width='50%'; P3.style.height='100px';
+          P3.style.backgroundColor='orange';
+          P3.style.margin='auto';
+        }
+       function modifStyle(obj)
+        {
+             
+         obj.textContent=obj.textContent.toLocaleUpperCase();
+         obj.style.width='50%'; obj.style.height='100px';
+          obj.style.backgroundColor='orange';
+          obj.style.margin='auto';
+        }
+
+        for(let i=0;i<paras.length;i++)
+         paras[i].addEventListener("click",function(){modifStyle(this)})*/
+
+         let t=document.querySelector("h2");
+         t.addEventListener("click",function(e)
+         {alert(e.type); alert(e.target); alert(e.target.textContent)});
+
+         window.addEventListener('keypress',function(e)
+         {alert(e.type); alert(e.target); alert(e.key)})
+    </script>
+</body>
+
+</html>

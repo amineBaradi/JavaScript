@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Events</title>
+</head>
+<body>
+  <section>
+    <div id="one">One</div>
+    <div id="two">Two</div>
+    <div id="three">Three</div>
+  </section>
+  <script>
+
+// const section = document.querySelector('section');
+// // طباعة الهدف المحدَّد
+// section.addEventListener('click', event => {
+//   console.log(event.target);
+// });
+let mi =document.querySelector('section');
+mi.addEventListener('click',function(e){
+  console.log(e.target);
+});
+let min =document.querySelector('section');
+this.addEventListener('click',function(e){
+  console.log(e.target);
+});
+  </script>
+</body>
+</html>

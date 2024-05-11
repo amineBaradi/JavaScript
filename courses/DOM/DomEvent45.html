@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Events</title>
+</head>
+
+<body>
+
+    <button>Click me</button>
+
+    <p>Try to change me.</p>
+<script>
+// keyCode و key و code التحقق من الخاصيات
+document.addEventListener('keydown', event => {
+    console.log('key: ' + event.keyCode);
+    console.log('key: ' + event.key);
+    console.log('code: ' + event.code);
+});
+</script>
+</body>
+</html>

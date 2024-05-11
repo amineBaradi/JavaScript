@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=div, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>onFocus , onBlur ,OnSubmit </h1>
+    <form action="" id="main">
+    <input id="input" type="text">
+    <input type="submit" value="GO">
+</form>
+<div id="notice"></div>
+<script> 
+let load=document.getElementById("main"),
+myNote=document.getElementById('notice'),
+myInput=document.getElementById('input');
+myInput.onfocus=function(){
+    'use strict';
+    myNote.textContent="Pleas Dont Forget To Write A Strong Password";
+};
+myInput.onblur=function(){
+    'use strict';
+    myNote.textContent=" ";
+};
+
+
+
+
+
+load.onsubmit = function(e){
+    'use strict';
+    e.preventDefault();
+    
+};
+</script>
+</body>
+</html>

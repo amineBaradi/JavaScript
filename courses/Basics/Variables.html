@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+
+<div id="hello">hello</div> 
+<h1>Medical Information</h1>
+<p id="append"></p>    
+<!-- VariableGlobal -->
+
+<body>
+    <script>
+/*
+    -Variable Intro
+    -What is Variable ?
+    -Why We Use Variables ?
+    -Declare A Variable And Use 
+    -Syntax (var name = "Amine") // est ce que valide declare un variable sous var
+    --syntax(keyword / variable name / assignment operator / variable value)
+    -Variable Without Var
+    -Multiple Variable in The Same Line
+    -Id And Global Variable
+    -Loosely Typed vs Strongly Typed
+====================================
+    var 
+    -Redeclare(Yes)
+    -Access Before Declare(Undefined)
+    -Variable Scope Drama [Added To Windows]
+    -Block or Function Scope
+====================================
+    Let
+    -Redeclare(No => Error)
+    -Access Before Declare(Error)
+    -Variable Scope Drama ()
+    -Block or Function Scope
+====================================
+    Const
+    -Redeclare(No => Error)
+    -Access Before Declare(Error)
+    -Variable Scope Drama () 
+    -Block or Function Scope
+*/
+
+//====================================
+
+    // var name ="amine" , age =19 , isWork=true;
+    // console.log(name,age,isWork);  // en Javascript est Valid mais|La méthode println en Java accepte soit une seule valeur à afficher, soit une chaîne de caractères (String) contenant le format de l'affichage.  
+
+    var user ="amine";
+        user1 = "amir";
+    var age =19
+
+    // console.log(user);
+    // console.log(user);
+    // console.log(user);
+    console.log(user1);
+    console.log(age);
+    
+//     console.log(hello);
+//     hello.innerHTML = "action";
+//====================================
+
+let username="amineBaradi";
+let age1=19;
+let isWorking=true;
+
+let lesFrères=[ typeof "hamid","amir","amine"];
+console.log(lesFrères);  //Array
+
+let prèsentation ={
+    username,
+    age1,
+    isWorking,
+    lesFrères
+}
+alert(prèsentation.username+age1+isWorking+lesFrères)
+console.log(prèsentation);  //Object
+
+
+
+</script>
+</body>
+</html>
+
+
+<!--  
+    IDENTIFIERS
+    _Name Conventions And RULES
+
+
+
+
+
+    Reserved Words
+        In JavaScript you cannot use these reserved words as variables, labels, or function names:
+            abstract	arguments	await*	boolean
+            break	byte	case	catch
+            char	class*	const	continue
+            debugger	default	delete	do
+            double	else	enum*	eval
+            export*	extends*	false	final
+            finally	float	for	function
+            goto	if	implements	import*
+            in	instanceof	int	interface
+            let*	long	native	new
+            null	package	private	protected
+            public	return	short	static
+            super*	switch	synchronized	this
+            throw	throws	transient	true
+            try	typeof	var	void
+            volatile	while	with	yield
+-->

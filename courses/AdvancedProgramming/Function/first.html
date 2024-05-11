@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Intro And Basic Usage
+        Function Advanced Examples
+    </title>
+</head>
+<body>
+    <script>
+        /*
+Function
+        Wath Is Function ?
+        user-Defined vs Built In
+        Syntax + Basic Usage
+        Exempale from Real life
+        Parametre + Argument
+        Practical Exempale
+         */
+
+
+    
+
+        // console.log(typeof console.log);
+'<hr>'//======================================================================================================
+    function Hello(userName){
+            // console.log(`Hello ${userName}`);  
+        };
+        Hello("amine");
+'<hr>'//======================================================================================================
+        // let userName = "amine";
+        function sayHello(userName , userAge){
+            // console.log(`Hello ${userName} tu as age ${userAge}`);
+            if(userAge > 8 ){
+                console.log("cette page interdid!! pour toi ");
+            }else{
+                console.log(`Hello ${userName} tu as age ${userAge}`);
+            }
+            
+        };
+        sayHello("amine",19);
+'<hr>'//======================================================================================================
+        function generateYears(start,end,exclude){
+        for(let i = start ;i<=end ; i++){
+            if(i===exclude){
+                continue;
+            }
+        console.log(`Years  ${i}`);
+        }
+        }
+        generateYears(2002,2023,2020);
+'<hr>'//======================================================================================================
+            function premierMetent(start, end ,minute){
+                for( let i= start; i <=end;i++){
+                    if(i===minute){
+                        console.log("pose");
+                        continue;
+                    }
+                        console.log(i);
+                        }
+                    }
+                        premierMetent(0,45.5,20);
+    </script>
+</body>
+</html> 

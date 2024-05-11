@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Scope - Lexical (Static)</title>
+</head>
+<body>
+<script>
+    /*
+    Scope
+    lexical scope
+
+
+    Search
+    -Execution Context
+    -lexical Environment
+    */ 
+    // let a = 10 ;
+    function parent(){
+        let a = 10 ;
+    
+        function child(){ // Nested Fuction تستطيع الوصول الى الى المتغيرات الموجودة في الاب ولكن العكس لا ينفع 
+            // let a = 30 ;
+            console.log(a);
+            console.log(`From child ${b}`);
+
+            
+            function grand(){
+            let b = 100;
+            console.log(`From Grand ${a}`);
+            console.log(`From Grand ${b}`);
+        } 
+        grand();
+
+        }
+        child();
+    }
+    parent();
+//==========================================================================================================
+
+</script>
+</body>
+</html>

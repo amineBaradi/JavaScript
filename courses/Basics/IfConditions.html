@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> If Conditions</title>
+</head>
+<body>
+    <!-- 
+            Control flow
+        
+            if
+            else if
+            else
+
+            if Condition(){
+                //Block Of Code
+            }
+        
+            Nested If Condition
+            Conditional Ternary Operator //Condition ? IF true : if false
+
+        Nullish Coalescing Operator And Logical Or
+            Logical Or ||
+            Null + undefined + Any Falsy Value
+            Nullish Coalsing Operator ??
+            --Null + Undefined
+            Switch Statement
+            switch(expression){
+                Case 1 :
+                // Code Block
+                break;
+                Case 2:
+                //Code Block
+                break;
+                Default:
+                //Code Block
+            }
+            Default Ordering
+            Multiple Match
+            ===
+        -->
+
+
+<script>
+    let pricee = 100 ;
+    let discount = false ;
+    let discountAmount = 30 ;
+    let countery = "Morocco"
+    let student = true ;
+
+    if(discount === true){
+        // pricee = pricee - discountAmount ;
+        pricee -= discountAmount
+    }
+    else if(countery ==="Morocco" && student===true){
+        pricee -=   discountAmount + 30;
+    }
+    else if(countery ==="Morocco" && student===false){
+        pricee -=   discountAmount + 10;
+    }
+    else if(countery==="syria"){
+        pricee -=  90;
+        if(student===true){
+        pricee -=   discountAmount + 30;
+
+        }else{
+        pricee -=   discountAmount + 10;
+        }
+    }
+    else{
+        price -= 10;
+    }
+    //console.log(price);
+    
+    
+    let theName = "Amine";
+    let theGender = "Male" ;
+    let theAge = 19 ;
+    if(theGender === "Male"){
+        console.log("Mr");
+    }else{
+        console.log("Mrs");
+    }
+ // Condition  ? If True : If False   
+theGender === "Male" ?   console.log("Mr") : console.log("Mrs");
+let result = theGender === "Male" ?    ("Mr") : ("Mrs");
+document.write(result);
+console.log(theGender === "Male" ?    ("Mr") : ("Mrs"));
+console.log(` Hello ${theGender === "Male" ?    ("Mr") : ("Mrs")} ${theName} `);
+theAge < 20 ? console.log(20) : theAge > 20 && theAge < 60 ? console.log("20 to 60") : theAge > 60 ? console.log("Larger than 60") : console.log(Unknown);
+
+
+    let husband="amine";
+    let wife="lina";
+    let sun = "sara"
+    
+    if(husband.length==5 ){          //ادا الرجل طوله 
+        console.log(" C'est amine");
+    }else if (wife.length==4){
+        console.log('cest linda');
+    }else{
+        console.log(sun);
+    }
+
+
+
+let am = husband.length==5 ?   " C'est amine" :   'cest linda';
+document.write( am );
+alert(am);
+
+
+
+console.log(husband.length==5 ?   " C'est amine" :   'cest linda' );
+console.log(`Boss ${husband.length==5 ?   " C'est amine" :   'cest linda' }`);
+
+console.log(Boolean(100));
+console.log(Boolean(-100));
+console.log(Boolean(0));
+console.log(Boolean(null));
+console.log(Boolean(false));
+console.log(Boolean(""));
+console.log(Boolean(undefined));
+
+let price1 = null  //Undefined   - 0  -  false - ""
+console.log(`Hello ${price1||'amine'}`);
+
+let price = null  //Undefined    
+console.log(`Hello ${price??'amine'}`);
+
+
+
+let day = "vendredi";
+switch(day){
+    case "lundi": console.log(" le jour 1");
+    break;
+    case "mardi": console.log(" le jour 2"); 
+    break;
+    case "mercredi": console.log(" le jour 3"); 
+    break;
+    case "jeudi": console.log(" le jour 4");
+    break;
+    case "vendredi": console.log(" le jour 5");
+    break;
+    case "samedi": console.log(" le jour 6"); 
+    break;
+    case "demanch": console.log(" le jour 7"); 
+    break;
+    console.log(day);  
+}
+
+
+let a ="hamid";
+switch(a){
+    case "amine":console.log("c'est moi");
+    break;
+    case "hamid":console.log("mon petite frère");
+    break;
+    case "ayoub":console.log("mon frère");
+    break;
+    case "younes":console.log("mon grand fèere");
+    break;
+    case "maman":console.log("c'est maman");
+    break;
+console.log( a);
+}
+// كيف يعمل الكود
+
+// أولاً يجب تحديد تعبير معين بين قوسيم عند استخدام التعبير switch وغالباً مايكون متغير ويتم تقديره مرة واحدة ثم يتم مقارنة قيمة التعبير الذي سيتم مقارنته مع القيم الأخرى في كل حالة .
+
+// إن كان هناك تطابق مع الكود سيت عرضه فوراً وسيتوقف الكود عن الفحص كما يمكن استخدام break بعد كل حالة لتجنب عبور الفحص إلى الحالة الأخرى تلقائياً .
+
+// مثال
+
+// $x=8;
+// switch ($x)
+// {
+// case 1:
+// echo "الرقم 1";
+// break;
+
+// case 2:
+// echo " الرقم 2";
+// break;
+
+// case 3:
+// echo " الرقم 3";
+// break;
+
+// default:
+
+// echo "لايوجد أرقام بين 1 و 3 ";
+
+// }
+</script>
+</body>
+</html>
+ 

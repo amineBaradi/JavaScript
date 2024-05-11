@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Learning the DOM</title>
+  </head>
+
+  <body>
+    <h1>Document Object Model</h1>
+  <ul>
+      <li>Buy groceries</li>
+      <li>Feed the cat </li>
+      <li>Do laundry</li>
+  </ul>
+  </body>
+<script>
+
+    let paragraph = 
+    document.createElement('p');//createElementمن اجل انشاء عنصر جديد وهو p
+    console.log(paragraph);
+
+
+    // paragraph.textContent = " I'm a brand new paraghraph.";
+    // console.log(paragraph)
+
+    // paragraph.innerHTML = " I'm a paraghraph with <strong>bold</strong>text.";
+
+
+    let text = 
+    document.createTextNode("I'm a new text node");//انشاء عقد جديد من نوع نص
+    console.log(text);
+
+    let todolist = document.querySelector('ul');
+    
+    let newTodo = document.createElement('li');
+
+    newTodo.textContent = "Do homework";
+
+
+    todolist.appendChild(newTodo);//اضافة عقد كابن اخير للعنصر الاب
+
+    let  anotherTodo = 
+    document.createElement('li');
+    anotherTodo.textContent ="pay bills";
+
+    // parentNode.insertBefore(newNode,nextSibling);
+
+    todolist.insertBefore(anotherTodo,todolist.firstElementChild);//اضافة عقدة على نفس مستوى عقدة الاب قبل عقدة الاخ
+
+
+
+    let modifieTodo =
+    document.createElement('li');
+    modifieTodo.textContent = 'feed the dog';
+    
+    // parentNode.replaceChild(newNode,oldNode);
+
+    todolist.replaceChild(modifieTodo,todolist.children[2]);//استبدال العقدة الحالة باخرى جديدة
+
+
+    todolist.removeChild(todolist.lastElementChild);
+    
+    todolist.children[1].remove();
+</script>
+</html>

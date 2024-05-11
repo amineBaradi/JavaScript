@@ -1,0 +1,82 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+    <meta charset=utf-8 />
+    <title>gestion des exceptions </title>
+    
+    </head> 
+    <body>
+        <div>
+            <p >Fct et gestion Exception</p> 
+        </div>
+        <script>
+            /*try{
+            alert("test");
+            alert(prenom);
+            alert("bonjour")
+            }
+            catch(err)
+            {
+                alert(err.message);
+                alert(err.name)
+            }
+            alert("externe au try");*/
+    /* function saisie()
+            {
+                let nb=parseInt(prompt("Donner un nombre entre 5 et 10"));
+                if(isNaN(nb))
+                throw "Ce n'est pas un nombre"
+                else if(nb<5)
+                    throw "Trop petit"
+                else if(nb>10)
+                    throw "trop grand"
+            }
+            try
+            {
+                saisie();
+            }
+            catch(e)
+            {
+                alert(e)
+            }
+            
+            alert("OK")*/
+        /* function div()
+            {
+                let x=parseInt(prompt("Donner le numérateur"));
+                let y=parseInt(prompt("donner le dénominateur"));
+                alert(y+1);
+                if(isNaN(x)||isNaN(y)||x===''||y==='')
+                throw new Error("Veuiller saisir des nombres");
+                else if(y==0)
+                throw new Error("Division par zéro non accéptée")
+                alert(x/y);
+            }
+
+            try{ div();}
+            catch(err)
+            {
+                alert(err.message);
+            }
+            finally
+            {
+                alert("Ce message sera toujours affiché avec ou sans exception")
+            }
+            alert("Bien");
+*/
+function salaire()
+{
+    let s=prompt("donner le salaire");
+    if(isNaN(s))throw "Nombre attendu";
+    if(s<3000) throw "trop bas";
+    if(s>30000) throw "trop élevé"
+    let p=document.createElement("p");
+    p.textContent=s;
+    document.body.append(p)
+}
+try{salaire();}
+
+
+        </script>
+    </body>
+</html> -->

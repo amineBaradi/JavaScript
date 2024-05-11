@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effects =>
+                        hide
+                        Show
+                        Toggle
+
+    </title>
+    <style>
+        p ,span{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <button>click</button>
+    <span>amine</span>
+    <a href="#">youtube</a>
+    <p>Welcom To Efficts</p>
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+$(document).ready(function(){
+$("button").click(function(){
+// $("a").hide(speed ,callback);
+$("a").hide(18000,function(){
+    $("span").show()
+});
+
+// $("a").hide("slow");  // $("a").hide("fast"); $("a").hide(400);           قيم افتراضية اد لم يعجبك الامر حدد بنفسك 
+// $(this).hide();
+// $("p").show();
+});
+});
+
+
+// $(document).ready(function(){
+// $("button").click(function(){
+// $("p").toggle();
+// });
+// });
+    </script>
+</body>
+</html>

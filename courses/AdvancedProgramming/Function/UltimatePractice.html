@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Function Ultimate Practice</title>
+</head>
+<body>
+    <script>
+
+function showInfo(us="Un",ag="Un",rt=0,show="Yes",...sk){
+document.write(`<div>`);
+document.write(`<h2>Welcome,${us}</h2>`);
+document.write(`<p>Age:${ag}</p>`);
+document.write(`<p>Hour Rate:$${rt}</p>`);
+
+if(show === "Yes"){
+if(sk.length > 0){
+document.write(`<p>Skills: ${sk.join(" | ")}</p>`);
+}else {
+document.write(`<p>Skills:No Skills</p>`);
+}
+
+}else{
+document.write(`<p>Skills Is Hidden</p>`);
+}
+document.write(`</div>`);    
+}
+showInfo("Amine",20,"Yes","Html","CSS","JavaScript","Python","Java","Kotlin","Swift","Object-c");
+
+
+
+
+
+
+//============================================================================================================
+        function ville(name='casablanca',age='900',type='ècnomique', ...lesvillages){
+            document.write(`<div>`);
+            document.write(`<h1 style ="color:green">la ville de ${name} ville ${type} agè ${age} ans <h1>`)
+if (type === 'ècnomique'){
+    if (lesvillages. length > 0 ){
+        document.write(`<p> LES VILLAGES DE CASABLANCA : ${lesvillages.join("|")}</p>`);
+    } 
+else {
+        document.write(` <p>el ya des villages</p>`);
+    }
+// console.log(`<p>${lesvillages.join('  ')}<p>`);
+    } else {
+        console.log("pas des villeges");                        
+}
+
+        document.write(`<div>`);
+        }
+        // ville();
+        ville("anfa",800,"islamic","derbSultan","derbGhelf" );
+    
+    </script>
+</body>
+</html>
